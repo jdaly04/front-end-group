@@ -1,7 +1,7 @@
 'use strict';
 
 const store = {
-  // host: 'http://localhost:4741'
+  host: 'http://localhost:4741'
 
 };
 
