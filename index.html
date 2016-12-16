@@ -1,25 +1,285 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <title>TheGameAboutNothing</title>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <button id="imageOptions" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal1">Images</button>
+    <button id="viewAllImages" class="btn btn-default test-button">View All Images!</button>
+    <div id="shakeHere" class="animated shake"></div>
+
+    <a id="outANDin" class="navbar-brand" data-toggle="modal" href="#myModal1">Sign Up or Sign In</a>
+
+    <button id="sign-out-main" class="btn btn-default test-button">Sign Out</button>
+    <a id="changePwrd-main" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">Change Password</a>
+    <br>
+    <!-- /.container -->
+  </nav>
+  <!-- Page Content -->
+  <div class="container">
+    <br><br><br>
+    <!-- Portfolio Item Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">The Game About Nothing</h1>
+        <div class="userIdMain"></div>
+
+      </div>
+    </div>
+    <br>
+
+    <!-- /.row -->
+    <div class="allImagesData"></div>
+
+    <!-- Portfolio Item Row -->
+    <div class="img-main">
+      <div class="img-container"></div>
+      <div class="img-container-info"></div>
+      <div class="img-container-info-one"></div>
+      <div class="img-container-info-two"></div>
+    </div>
+    <div id="content-main">
+
+      <div class="col-md-4">
+        <h3>Check out the Clues!</h3>
+        <p>We see this show wherever we go! And we can prove it!</p>
+        <h3>How To Play</h3>
+        <ul>
+          <li>1: Sign Up!</li>
+          <li>2: Make a Guess on a Clue or Upload Your Own</li>
+        </ul>
+      </div>
+
+    </div><br>
+    <!-- /.row -->
+
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            <h4 class="options">User Options</h4>
+
+          </div>
+
+          <div class="modal-body">
+            <div class="containera">
+
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign Up!</legend>
+                  <input type="text" name="credentials[email]" placeholder="email address">
+                  <input type="password" name="credentials[password]" placeholder="password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                  <input type="submit" name="submit" value="Sign Up!">
+                </fieldset>
+              </form>
+            </div>
+            <div id="signUpBox"></div>
+
+          </div>
+
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            <h4 class="options">User Options</h4>
+
+            <button id="sign-out-pwrd" class="btn btn-default test-button">Sign Out</button>
+
+          </div>
+
+          <div class="modal-body">
+            <div class="containerc">
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password!</legend>
+                  <input type="password" name="passwords[old]" placeholder="Old Password">
+                  <input type="password" name="passwords[new]" placeholder="New Password">
+                  <input type="submit" name="submit" value="Change Password!">
+                </fieldset>
+              </form>
+            </div>
+            <div id="changePasswordBox"></div>
+          </div>
+
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            <h4 class="options">User Options</h4>
+
+
+            <button id="sign-out" class="btn btn-default test-button">Sign Out</button>
+
+
+            <a id="changePwrd" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal3">
+               Change Password</a>
+
+
+          </div>
+
+          <div class="modal-body">
+            <div class="containera">
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Sign In!</legend>
+                  <input type="text" name="credentials[email]" placeholder="email address">
+                  <input type="password" name="credentials[password]" placeholder="password">
+                  <input type="submit" name="submit" value="Sign In!">
+                </fieldset>
+              </form>
+              <div id="needAccountBox">
+                <a id="needAccount" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal2">
+Need An Account?</a>
+              </div><br>
+              <div id="signInBoxTwo"></div>
+
+            </div>
+            <div id="signInBox"></div><br>
+            <br>
+            <div id="imagePost">
+              <form id="postImage">
+                <fieldset>
+                  <legend>Upload Image</legend>
+                  <input type="url" name="image[url]" placeholder="Photo URL">
+                  <input type="submit" name="submit" value="Post!">
+                </fieldset>
+              </form>
+            </div>
+            <div id="postImageBox"></div>
+            <br>
+            <div id="imageUpdate">
+              <form id="updateImage">
+                <fieldset>
+                  <legend>Update Image</legend>
+                  <input type="url" name="image[url]" placeholder="Updated Photo URL">
+                  <input type="text" name="image[id]" placeholder="ID">
+                  <input type="submit" name="submit" value="Update URL!">
+                </fieldset>
+              </form>
+            </div>
+            <div id="updateImageBox"></div>
+            <br>
+
+            <div id="imageView">
+              <form id="viewImage">
+                <fieldset>
+                  <legend>View Image</legend>
+                  <input type="text" name="image[id]" placeholder="ID">
+                  <input type="submit" name="submit" value="View Photo!">
+                </fieldset>
+              </form>
+            </div>
+            <div id="viewImageBox"></div>
+            <br>
+
+            <br>
+
+            <div id="imageDelete">
+              <form id="deleteImage">
+                <fieldset>
+                  <legend>Delete Image</legend>
+                  <input type="text" name="id" placeholder="ID">
+                  <input type="submit" name="submit" value="Delete!">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            <h4 class="options">User Options</h4>
+
+          </div>
+
+          <div class="modal-body">
+            <div class="containera">
+
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign Up!</legend>
+                  <input type="text" name="credentials[email]" placeholder="email address">
+                  <input type="password" name="credentials[password]" placeholder="password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                  <input type="submit" name="submit" value="Sign Up!">
+                </fieldset>
+              </form>
+            </div>
+            <div id="signUpBox"></div>
+
+          </div>
+
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          <hr>
+          <p>Copyright &copy; TheGameAboutNothing.com</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+  </div>
+  <!-- /.container -->
+
+
+
+
+</body>
+
 </html>
