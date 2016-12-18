@@ -74,7 +74,7 @@ const postImageFailure = () => {
 $('#signInBox').text('Image Was NOT Posted!');
 };
 
-const deleteImageSuccess = () => {
+const deleteSurveySuccess = () => {
   $('#signInBox')
       .empty()
       .append('Image Was Deleted');
@@ -87,11 +87,11 @@ const deleteImageSuccess = () => {
       .empty();
     $('.img-container-info-two')
       .empty();
-    $('#deleteImage').trigger('reset');
+    $('#deleteSurvey').trigger('reset');
 
 };
 
-const deleteImageFailure = (data) => {
+const deleteSurveyFailure = (data) => {
   console.log(data);
   $('#signInBox')
       .empty()
@@ -123,7 +123,7 @@ const viewAllImagesFailure = (data) => {
 const viewAllImagesSuccess = (data) => {
 //this line takes the data.images and for each element and index, gives it a new title definition (which is strung together using handlebars `image id, url, user id`) which points to the element data and displays it.
   data.images.forEach((e,i)=>data.images[i].title = `Image ID: ${e.id} URL: ${e.url} User ID: ${e.user_id}`);
-  $('.allImagesData').show().html(showImagesTemplate(data));
+  $('.surveysContainer').show().html(showImagesTemplate(data));
   $('.img-container').show();
   $('.img-container-info').show();
   $('.img-container-info-two').show();
@@ -156,8 +156,8 @@ module.exports = {
   success,
   postImageSuccess,
   postImageFailure,
-  deleteImageSuccess,
-  deleteImageFailure,
+  deleteSurveySuccess,
+  deleteSurveyFailure,
   updateImageSuccess,
   updateImageFailure,
   viewImageSuccess,

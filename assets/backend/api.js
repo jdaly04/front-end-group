@@ -4,7 +4,7 @@ const store = require('../scripts/store.js');
 
   const postImage = function (data) {
     return $.ajax({
-      url: store.host + '/images/',
+      url: store.host + '/users',
       method: 'POST',
       headers: {
         Authorization: 'Token token=' + store.user.token,
@@ -13,20 +13,20 @@ data
     });
   };
 
-  const deleteImage = function (id) {
+  const deleteSurvey = function (id) {
     return $.ajax({
-      url: store.host + '/images/' + id,
+      url: store.host + '/images' + id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
       },
     });
   };
-window.deleteImage = deleteImage;
+window.deleteSurvey = deleteSurvey;
 
 const updateImage = function (data) {
   return $.ajax({
-    url: store.host + '/images/' + data.image.id,
+    url: store.host + '/images' + data.image.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -37,7 +37,7 @@ const updateImage = function (data) {
 
 const viewImage = function (data) {
   return $.ajax({
-    url: store.host + '/images/' + data.image.id,
+    url: store.host + '/images' + data.image.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -48,7 +48,7 @@ const viewImage = function (data) {
 
 const viewAllImages = function (data) {
   return $.ajax({
-    url: store.host + '/images/',
+    url: store.host + '/users',
     method: 'GET',
     // headers: {
     //   Authorization: 'Token token=' + store.user.token,
@@ -59,7 +59,7 @@ const viewAllImages = function (data) {
 
 module.exports = {
   postImage,
-  deleteImage,
+  deleteSurvey,
   updateImage,
   viewImage,
   viewAllImages,

@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
+// const store = require('../store.js');
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example');
@@ -11,28 +12,25 @@ const config = require('./config');
 
 const authEvents = require('./auth/events.js');
 const backEndEvents = require('../backend/events.js');
+const backEndApi = require('../backend/api.js');
 
 $(() => {
   setAPIOrigin(location, config);
   authEvents.addHandlers();
   backEndEvents.addClueHandlers();
-  $('#reset').hide();
-  $('#stats').hide();
+  backEndApi.viewAllImages();
   $('#sign-out').hide();
   $('#sign-out-main').hide();
-  $('#imageView').hide();
-  $('#imageDelete').hide();
-  $('#imageUpdate').hide();
-  $('#imagePost').hide();
-  $('.img-container').hide();
-  $('.img-container-info').hide();
-  $('.img-container-info-one').hide();
-  $('.img-container-info-two').hide();
-  $('.allImagesData').hide();
+  // $('.img-container').hide();
+  // $('.img-container-info').hide();
+  // $('.img-container-info-one').hide();
+  // $('.img-container-info-two').hide();
+  $('.surveysContainer').hide();
   $('#changePwrd').hide();
   $('#changePwrd-main').hide();
   $('#signInBox').hide();
   $('#viewAllImages').hide();
-  $('#imageOptions').hide();
+  // $('#surveyOptions').hide();
   $('#shakeHere').hide();
+
 });

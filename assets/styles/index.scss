@@ -104,7 +104,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 100%;
   height: 70px;
   text-shadow: 5px 5px 5px blue;
-  font-size: 150%;
+  font-size: 115%;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -149,21 +149,39 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   // display: flex;
   justify-content: center;
   align-items: center;
-  float: left;
+  float: right;
   margin-right: 5%;
   margin-top: 8px;
   margin-bottom: 2px;
 }
 
-#imageOptions {
+#createASurvey {
+  width: 20%;
+  text-color: white;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#seeYourSurveysAndAnswers {
+  width: 20%;
+  text-color: white;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+#surveyOptions {
   text-color: white;
   text-shadow: 2px 2px white;
   // display: flex;
   justify-content: center;
   align-items: center;
   float: left;
-  margin-left: 5%;
-  margin-right: 5%;
   margin-top: 8px;
   margin-bottom: 2px;
 }
@@ -176,7 +194,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: auto;
 }
 
-#imageDelete {
+#surveyDelete {
   background: white;
   border-radius: 5px;
   height: 90px;
@@ -184,10 +202,20 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: auto;
 }
 
-#imageUpdate {
+#appendQuestion {
   background: white;
   border-radius: 5px;
   height: 90px;
+  text-align: center;
+  width: auto;
+}
+
+#createSurveys {
+  background: white;
+  border-radius: 5px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: auto;
 }
@@ -200,7 +228,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: auto;
 }
 
-#imagePost {
+#seeYourSurveys {
   background: white;
   border-radius: 5px;
   height: 90px;
@@ -270,7 +298,37 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-right: 0;
 }
 
-.allImagesData {
+#sign-out-modal-four {
+  text-color: white;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+#sign-out-modal-five {
+  text-color: white;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+#sign-out-modal-six {
+  text-color: white;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+.surveysContainer {
     max-width: 90%;  // or width instead of max-width
     max-height: 175px; // or height instead of max-height
     overflow: auto;

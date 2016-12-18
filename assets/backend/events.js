@@ -13,12 +13,12 @@ const onPostImage = function (event) {
     .catch(ui.postImageFailure);
 };
 
-const onDeleteImage = function (event) {
+const ondeleteSurvey = function (event) {
   event.preventDefault();
-  let deleteImage = getFormFields(event.target);
-  api.deleteImage(deleteImage.id)
-    .then(ui.deleteImageSuccess)
-    .catch(ui.deleteImageFailure);
+  let deleteSurvey = getFormFields(event.target);
+  api.deleteSurvey(deleteSurvey.id)
+    .then(ui.deleteSurveySuccess)
+    .catch(ui.deleteSurveyFailure);
 };
 
 const onUpdateImage = function (event) {
@@ -47,7 +47,7 @@ const onViewAllImages = function (event) {
 
 const addClueHandlers = () => {
   $('#postImage').on('submit', onPostImage);
-  $('#deleteImage').on('submit', onDeleteImage);
+  $('#deleteSurvey').on('submit', ondeleteSurvey);
   $('#updateImage').on('submit', onUpdateImage);
   $('#viewImage').on('submit', onViewImage);
   $('#viewAllImages').on('click', onViewAllImages);

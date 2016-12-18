@@ -19,7 +19,7 @@ const signUpSuccess = (data) => {
   $('#myModal2').modal('hide');
   $('#myModal1').modal('show');
   $('#sign-up').trigger('reset');
-
+  console.log(data);
 };
 
 const signUpFailure = (data) => {
@@ -30,13 +30,14 @@ const signUpFailure = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
+  console.log(data);
   success(data);
-  $('#imageDelete').show();
+  $('#surveyDelete').show();
   $('#imageView').show();
-  $('#imageUpdate').show();
+  $('#createSurveys').show();
   $('#sign-out').show();
   $('#sign-out-main').show();
-  $('#imagePost').show();
+  $('#seeYourSurveys').show();
   $('#change-password').show();
   $('#signInBox').text("I'm Back BABY!");
   $('#signUpBox')
@@ -60,8 +61,8 @@ const signInSuccess = (data) => {
   $('#viewAllImages').show();
   $('#myModal1').modal('hide');
   $('#outANDin').hide();
-  $('#imageOptions').show();
-  $('#shakeHere').show().empty().append('<--Start Here!');
+  $('#surveyOptions').show();
+  $('#shakeHere').show().empty().append('<-- Want To Make Your Own Survey?');
   $('#sign-in').trigger('RESET');
 
 
@@ -79,17 +80,10 @@ const signOutSuccess = (data) => {
   $('#change-password').hide();
   $('#sign-out').hide();
   $('#sign-out-main').hide();
-  $('#imageUpdate').hide();
-  $('#imagePost').hide();
-  $('#imageView').hide();
-  $('#imageDelete').hide();
   $('#signInBox').text('You Are Signed Out!');
-  $('#signInBox').text('');
-  $('#changePasswordBox').text('');
-  $('#viewImageBox').text('');
-  $('#updateImageBox').text('');
-  $('#deleteImageBox').text('');
-  $('#postImageBox').text('');
+  $('#signInBox').empty();
+  $('#changePasswordBox').empty();
+  // $('#postImageBox').text('');
   $('.img-container').empty().hide();
   $('.img-container-info').empty().hide();
   $('.img-container-info-one').empty().hide();
@@ -108,13 +102,15 @@ const signOutSuccess = (data) => {
     .empty()
     .append("User Options");
   $('.userIdMain').empty();
-  $('.allImagesData').hide();
+  $('.surveysContainer').hide();
   $('#viewAllImages').hide();
   $('#outANDin').show();
-  $('#imageOptions').hide();
+  $('#surveyOptions').hide();
   $('#shakeHere').empty().hide();
   $('#signInBoxTwo').empty().hide();
   $('#sign-in').trigger('reset');
+  $('#myModal4').modal('hide');
+
 
 };
 

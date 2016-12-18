@@ -40,9 +40,13 @@ const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
+//Need to combine these now that modal openings have been secured through the chain of User actions
   $('#sign-out').on('click', onSignOut);
   $('#sign-out-main').on('click', onSignOut);
   $('#sign-out-pwrd').on('click', onSignOut);
+  $('#sign-out-modal-four').on('click', onSignOut);
+  $('#sign-out-modal-five').on('click', onSignOut);
+  $('#sign-out-modal-six').on('click', onSignOut);
 
 };
 
