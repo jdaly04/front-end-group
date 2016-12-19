@@ -31,7 +31,6 @@ const signUpFailure = (data) => {
 const signInSuccess = (data) => {
   store.user = data.user;
   console.log(data);
-  success(data);
   $('#surveyDelete').show();
   $('#imageView').show();
   $('#createSurveys').show();

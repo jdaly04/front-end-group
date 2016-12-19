@@ -14,7 +14,8 @@ const signUp = (data) => {
 
 const signIn = (data) => {
   return $.ajax({
-  url: config.apiOrigins.production + 'sign-in',
+    url: config.apiOrigins.host + 'sign-in',
+  // url: config.apiOrigins.production + 'sign-in',
     method: 'POST',
     data,
   });
