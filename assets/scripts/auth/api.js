@@ -51,10 +51,10 @@ const changePassword = (data) => {
 
   const signOut = () => {
     return $.ajax({
-      url: config.apiOrigins.production + 'sign-out' + config.apiOrigins.production.user.id,
+      url: store.host + '/sign-out/' + store.user._id,
       method: 'DELETE',
       headers: {
-        Authorization: 'Token token=' + config.apiOrigins.production.user.token,
+        Authorization: 'Token token=' + store.user.token,
       },
     });
 };
