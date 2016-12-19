@@ -18,7 +18,6 @@ const signUpSuccess = (data) => {
   $('#myModal2').modal('hide');
   $('#myModal1').modal('show');
   $('#sign-up').trigger('reset');
-  console.log(data);
 };
 
 const signUpFailure = (data) => {
@@ -75,6 +74,7 @@ const signInFailure = (data) => {
 };
 
 const signOutSuccess = (data) => {
+  store.user = data.user;
   success(data);
   $('#change-password').hide();
   $('#sign-out').hide();
@@ -113,12 +113,15 @@ const signOutSuccess = (data) => {
 
 };
 
-const changePasswordFailure = () => {
+const changePasswordFailure = (data) => {
+  console.log(data);
+
   $('#changePasswordBox').text("Maybe You Entered Something Wrong....Try Again.");
   $('#signInBox').text("Password NOT changed. You're Still Logged In Though!");
 };
 
-const changePasswordSuccess = () => {
+const changePasswordSuccess = (data) => {
+  console.log(data);
   $('#signInBox').text('Write Down Your New Password!');
   $('#myModal3').modal('hide');
   $('#myModal1').modal('show');
