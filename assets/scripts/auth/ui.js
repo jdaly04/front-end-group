@@ -14,7 +14,6 @@ const failure = (error) => {
 
 const signUpSuccess = (data) => {
   store.user = data.user;
-  success(data);
   $('#signUpBox').text("You Are Signed Up!");
   $('#myModal2').modal('hide');
   $('#myModal1').modal('show');

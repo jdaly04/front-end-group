@@ -4,7 +4,9 @@ const config = require('../config.js');
 
 const signUp = (data) => {
   return $.ajax({
-    url: config.apiOrigins.production + 'sign-up',
+    url: config.apiOrigins.host + 'sign-up',
+
+    // url: config.apiOrigins.production + 'sign-up',
     method: 'POST',
     data,
   });
