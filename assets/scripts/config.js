@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com',
+      // production: 'https://localhost:4741'
+    production: 'https://powerful-garden-17029.herokuapp.com/',
   },
 };
 

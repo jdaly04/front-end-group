@@ -24,6 +24,7 @@ const signUpSuccess = (data) => {
 
 const signUpFailure = (data) => {
   store.user = data.user;
+  console.log(data);
   success(data);
   $('#signUpBox').text("Maybe You Entered Something Wrong....Or Maybe That Email Already Exists!");
 };
