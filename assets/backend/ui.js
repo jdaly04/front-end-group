@@ -43,34 +43,35 @@ const viewImageFailure = (data) => {
       .append('Maybe Not a Valid #?  Check the List!  Hover for Info!');
 };
 
-const postImageSuccess = (data) => {
+const questionAppendSuccess = (data) => {
  console.log(data);
- let img = $("<img>").attr("src", data.image.url).height(300).width(300);
- $(".img-container")
-   .empty()
-    .show()
-   .append(img);
-$('.img-container-info')
-    .empty()
-    .show()
-    .append("Image ID:", + data.image.id);
-$('.img-container-info-one')
-    .empty()
-    .show()
-    .append('Image Was Just Posted!');
-$('.img-container-info-two')
-    .empty()
-    .show()
-    .append("User ID:", + data.image.user_id);
-$('#signInBox')
-    .empty()
-    .append('Image Was Posted As ID:', + data.image.id);
+ // let img = $("<img>").attr("src", data.image.url).height(300).width(300);
+//  $(".img-container")
+//    .empty()
+//     .show()
+//    .append(img);
+// $('.img-container-info')
+//     .empty()
+//     .show()
+//     .append("Image ID:", + data.image.id);
+// $('.img-container-info-one')
+//     .empty()
+//     .show()
+//     .append('Image Was Just Posted!');
+// $('.img-container-info-two')
+//     .empty()
+//     .show()
+//     .append("User ID:", + data.image.user_id);
+// $('#signInBox')
+//     .empty()
+//     .append('Image Was Posted As ID:', + data.image.id);
 $('#myModal1').modal('hide');
-$('#postImage').trigger('reset');
+$('#questionAppend').trigger('reset');
 
 };
 
-const postImageFailure = () => {
+const questionAppendFailure = (data) => {
+console.log(data);
 $('#signInBox').text('Image Was NOT Posted!');
 };
 
@@ -115,14 +116,14 @@ const updateImageFailure = (data) => {
       .append('Nope.  Something Went Wrong.');
 };
 
-const viewAllImagesFailure = (data) => {
+const viewAllSurveysFailure = (data) => {
   console.log(data);
   $('#signInBox').empty();
 };
 
-const viewAllImagesSuccess = (data) => {
+const viewAllSurveysSuccess = (data) => {
 //this line takes the data.images and for each element and index, gives it a new title definition (which is strung together using handlebars `image id, url, user id`) which points to the element data and displays it.
-  data.images.forEach((e,i)=>data.images[i].title = `Image ID: ${e.id} URL: ${e.url} User ID: ${e.user_id}`);
+  // data.images.forEach((e,i)=>data.images[i].title = `Image ID: ${e.id} URL: ${e.url} User ID: ${e.user_id}`);
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('.img-container').show();
   $('.img-container-info').show();
@@ -132,7 +133,7 @@ const viewAllImagesSuccess = (data) => {
 //creates a jquery click function
   jQuery(function ($) {
 //when this div class is clicked
-      $('.imageImage').click(function () {
+      $('.surveyImage').click(function () {
 //it empties and appends
           $('.img-container')
             .empty()
@@ -154,15 +155,15 @@ const viewAllImagesSuccess = (data) => {
 module.exports = {
   failure,
   success,
-  postImageSuccess,
-  postImageFailure,
+  questionAppendSuccess,
+  questionAppendFailure,
   deleteSurveySuccess,
   deleteSurveyFailure,
   updateImageSuccess,
   updateImageFailure,
   viewImageSuccess,
   viewImageFailure,
-  viewAllImagesSuccess,
-  viewAllImagesFailure,
+  viewAllSurveysSuccess,
+  viewAllSurveysFailure,
 
 };

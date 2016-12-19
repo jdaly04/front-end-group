@@ -56,7 +56,7 @@ const signInSuccess = (data) => {
   $('.userIdMain')
     .empty()
     .append("User ID:", + data.user.id);
-  $('#viewAllImages').show();
+  $('#viewAllSurveys').show();
   $('#myModal1').modal('hide');
   $('#outANDin').hide();
   $('#surveyOptions').show();
@@ -102,7 +102,7 @@ const signOutSuccess = (data) => {
     .append("User Options");
   $('.userIdMain').empty();
   $('.surveysContainer').hide();
-  $('#viewAllImages').hide();
+  $('#viewAllSurveys').hide();
   $('#outANDin').show();
   $('#surveyOptions').hide();
   $('#shakeHere').empty().hide();

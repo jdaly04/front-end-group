@@ -2,20 +2,20 @@
 
 const store = require('../scripts/store.js');
 
-  const postImage = function (data) {
+  const questionAppend = function (data) {
     return $.ajax({
-      url: store.host + '/users',
+      url: store.host + '/surveys',
       method: 'POST',
       headers: {
         Authorization: 'Token token=' + store.user.token,
       },
-data
+    data
     });
   };
 
-  const deleteSurvey = function (id) {
+  const deleteSurvey = function (_id) {
     return $.ajax({
-      url: store.host + '/images' + id,
+      url: store.host + '/surveys/' + _id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
@@ -46,9 +46,9 @@ const viewImage = function (data) {
   });
 };
 
-const viewAllImages = function (data) {
+const viewAllSurveys = function (data) {
   return $.ajax({
-    url: store.host + '/users',
+    url: store.host + '/surveys',
     method: 'GET',
     // headers: {
     //   Authorization: 'Token token=' + store.user.token,
@@ -58,9 +58,9 @@ const viewAllImages = function (data) {
 };
 
 module.exports = {
-  postImage,
+  questionAppend,
   deleteSurvey,
   updateImage,
   viewImage,
-  viewAllImages,
+  viewAllSurveys,
 };

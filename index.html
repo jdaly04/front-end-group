@@ -26,7 +26,7 @@
 <!-- This link appears on page load.  It is the first step to using website and goes to modal 1 to sign up or sign in -->
     <a id="outANDin" class="navbar-brand" data-toggle="modal" href="#myModal1">Sign Up or Sign In</a>
 <!-- Button for View All Images goes to GET AJAX request and displays rows of thumbnails in Surveyscontainer DIV -->
-    <button id="viewAllImages" class="btn btn-default test-button">View All Images!</button>
+    <button id="viewAllSurveys" class="btn btn-default test-button">View All Images!</button>
 <!-- Button which appears AFTER SIGN IN and will sign you out with AJAX request on click -->
     <button id="sign-out-main" class="btn btn-default test-button">Sign Out</button>
 <!-- Link which opens MODAL 3 Change password modal -->
@@ -52,7 +52,7 @@
     </div>
 <br>
 
-<!-- This is the div that VIEWALLIMAGES button populates with thumbnails using AJAX GET REQUEST -->
+<!-- This is the div that viewAllSurveys button populates with thumbnails using AJAX GET REQUEST -->
 
     <div class="surveysContainer"></div>
 
@@ -248,7 +248,8 @@
             <form id="questionAppend">
               <fieldset>
                 <legend>Enter Question HERE</legend>
-                <input type="text" name="id" placeholder="Eneter Question HERE">
+                <input name="Survey Title" type="text" value="" placeholder="Survey Title">
+                <input type="text" name="Question" placeholder="Question">
                 <input type="submit" name="submit" value="Append Question!">
               </fieldset>
             </form>

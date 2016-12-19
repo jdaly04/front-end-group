@@ -5,18 +5,18 @@ const getFormFields = require('../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
-const onPostImage = function (event) {
+const onQuestionAppend = function (event) {
   event.preventDefault();
-  let postImage = getFormFields(event.target);
-  api.postImage(postImage)
-    .then(ui.postImageSuccess)
-    .catch(ui.postImageFailure);
+  let questionAppend = getFormFields(event.target);
+  api.questionAppend(questionAppend)
+    .then(ui.questionAppendSuccess)
+    .catch(ui.questionAppendFailure);
 };
 
-const ondeleteSurvey = function (event) {
+const onDeleteSurvey = function (event) {
   event.preventDefault();
   let deleteSurvey = getFormFields(event.target);
-  api.deleteSurvey(deleteSurvey.id)
+  api.deleteSurvey(deleteSurvey._id)
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure);
 };
@@ -37,20 +37,20 @@ const onViewImage = function (event) {
     .catch(ui.viewImageFailure);
 };
 
-const onViewAllImages = function (event) {
+const onViewAllSurveys = function (event) {
   event.preventDefault();
-  let viewAllImages = getFormFields(event.target);
-  api.viewAllImages(viewAllImages)
-    .then(ui.viewAllImagesSuccess)
-    .catch(ui.viewAllImagesFailure);
+  let viewAllSurveys = getFormFields(event.target);
+  api.viewAllSurveys(viewAllSurveys)
+    .then(ui.viewAllSurveysSuccess)
+    .catch(ui.viewAllSurveysFailure);
 };
 
 const addClueHandlers = () => {
-  $('#postImage').on('submit', onPostImage);
-  $('#deleteSurvey').on('submit', ondeleteSurvey);
+  $('#questionAppend').on('submit', onQuestionAppend);
+  $('#deleteSurvey').on('submit', onDeleteSurvey);
   $('#updateImage').on('submit', onUpdateImage);
   $('#viewImage').on('submit', onViewImage);
-  $('#viewAllImages').on('click', onViewAllImages);
+  $('#viewAllSurveys').on('click', onViewAllSurveys);
 };
 
 

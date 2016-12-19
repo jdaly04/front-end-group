@@ -18,7 +18,7 @@ $(() => {
   setAPIOrigin(location, config);
   authEvents.addHandlers();
   backEndEvents.addClueHandlers();
-  backEndApi.viewAllImages();
+  backEndApi.viewAllSurveys();
   $('#sign-out').hide();
   $('#sign-out-main').hide();
   // $('.img-container').hide();
@@ -29,7 +29,7 @@ $(() => {
   $('#changePwrd').hide();
   $('#changePwrd-main').hide();
   $('#signInBox').hide();
-  $('#viewAllImages').hide();
+  $('#viewAllSurveys').hide();
   // $('#surveyOptions').hide();
   $('#shakeHere').hide();
 
