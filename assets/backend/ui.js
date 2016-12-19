@@ -77,12 +77,12 @@ $('#signInBox').text('Image Was NOT Posted!');
 const deleteSurveySuccess = () => {
   $('#signInBox')
       .empty()
-      .append('Image Was Deleted');
+      .append('Survey Was Deleted');
     $(".img-container")
       .empty();
     $('.img-container-info')
       .empty()
-      .text("Image Was Deleted!");
+      .text("Survey Was Deleted!");
     $('.img-container-info-one')
       .empty();
     $('.img-container-info-two')

@@ -15,7 +15,7 @@ data
 
   const deleteSurvey = function (id) {
     return $.ajax({
-      url: store.host + '/images' + id,
+      url: store.host + '/surveys/' + id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
