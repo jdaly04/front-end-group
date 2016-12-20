@@ -19,18 +19,16 @@ $(() => {
   authEvents.addHandlers();
   backEndEvents.addClueHandlers();
   backEndApi.viewAllSurveys();
-  $('#sign-out').hide();
-  $('#sign-out-main').hide();
-  // $('.img-container').hide();
-  // $('.img-container-info').hide();
-  // $('.img-container-info-one').hide();
-  // $('.img-container-info-two').hide();
+  $('#signInBox').hide();
+  $('#shakeHere').show().empty().append(' <-- Want To Make Your Own Survey?');
   $('.surveysContainer').hide();
+//links
   $('#changePwrd').hide();
   $('#changePwrd-main').hide();
-  $('#signInBox').hide();
+//buttons
   $('#viewAllSurveys').hide();
-  // $('#surveyOptions').hide();
-  $('#shakeHere').hide();
+  $('#surveyOptions').hide();
+  $('#sign-out').hide();
+  $('#sign-out-main').hide();
 
 });
