@@ -14,6 +14,7 @@ const failure = (error) => {
 
 const signUpSuccess = (data) => {
   store.user = data.user;
+
   $('#signUpBox').text("You Are Signed Up!");
   $('#myModal2').modal('hide');
   $('#myModal1').modal('show');
@@ -27,6 +28,7 @@ const signUpFailure = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
+  console.log(data);
   $('#surveyDelete').show();
   $('#imageView').show();
   $('#createSurveys').show();

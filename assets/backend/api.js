@@ -12,6 +12,8 @@ const store = require('../scripts/store.js');
     data
     });
   };
+  window.questionAppend = questionAppend;
+
 
   const deleteSurvey = function (_id) {
     return $.ajax({
