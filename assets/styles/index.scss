@@ -164,8 +164,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .surveysContainer {
-    max-width: 90%;  // or width instead of max-width
-    max-height: 175px; // or height instead of max-height
+    max-width: 95%;  // or width instead of max-width
+    max-height: 90%; // or height instead of max-height
     overflow: auto;
     overflow-x: scroll;
   }
@@ -326,6 +326,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   align-items: center;
   float: right;
   margin-top: 0;
+}
+
+.btn-warning a:hover {
+  background-color: tomato;
+}
+
+.btn-warning {
+  background-color: cornflowerblue;
+  display: inline-block;
+  float: right;
+  border-color: blue;
+  height: 50px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
 }
 
 .modal-title {
