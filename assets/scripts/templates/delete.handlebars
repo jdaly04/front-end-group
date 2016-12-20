@@ -1,8 +1,8 @@
-<div class="panel-body">
-  <div class="media">
-    <div class="media-body">
-      <h3>{{title}} </h3>
-      <button  class="btn btn-danger deleteThis" id="{{_id}}">Delete</button>
-    </div>
+{{#each surveys}}
+  <div class="imageImage">
+        <button class="btn btn-warning" id="{{_id}}"> GO TO:  {{title}} </button>
   </div>
-</div>
+  <div class="deleteThis">
+        <button  class="btn btn-danger deleteThis" id="{{_id}}">Delete<br>{{title}}</button>
+  </div>
+{{/each}}

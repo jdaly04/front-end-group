@@ -12,6 +12,8 @@ const onQuestionAppend = function (event) {
   let questionAppend = getFormFields(event.target);
   api.questionAppend(questionAppend)
     .then(ui.questionAppendSuccess)
+    .then(api.viewAllSurveys)
+    .then(ui.viewAllSurveysSuccess)
     .catch(ui.questionAppendFailure);
 };
 

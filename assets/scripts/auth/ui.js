@@ -97,6 +97,8 @@ const signOutSuccess = (data) => {
   $('#signInBoxTwo').empty().hide();
   $('#sign-in').trigger('reset');
   $('#myModal4').modal('hide');
+  $('.surveysContainer').empty();
+  $('.img-container').empty();
 };
 
 const changePasswordFailure = (data) => {

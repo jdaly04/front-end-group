@@ -26,7 +26,7 @@
 <!-- This div will SHAKE on sign in success.  Use it to append TEXT that you want to draw attention to -->
     <div id="shakeHere" class="animated shake"></div>
 <!-- Button for View All Images goes to GET AJAX request and displays rows of thumbnails in Surveyscontainer DIV -->
-    <button id="viewAllSurveys" class="btn btn-default test-button">View All Images!</button>
+    <button id="viewAllSurveys" class="btn btn-default test-button">View All Surveys!</button>
 <!-- Button which appears AFTER SIGN IN and will sign you out with AJAX request on click -->
     <button id="sign-out-main" class="btn btn-default test-button">Sign Out</button>
 <!-- Link which opens MODAL 3 Change password modal -->
@@ -253,12 +253,7 @@
               </fieldset>
             </form>
           </div>
-          <div id="currentSurvey">APPEND EACH QUESTION TO HERE SO THEY CAN SEE AS THEY MAKE IT, this may end up as a handlebars template - REMEMBER to start with one question on a survey</div>
-<br>
-          <button type="button">DELETE THIS QUESTION BUTTON</button>
-<br>
-          <button type="button">This button will POST the survey to it's own URL (??)</button>
-
+          <div id="currentSurvey"></div>
         </div>
 
           <div class="modal-footer">

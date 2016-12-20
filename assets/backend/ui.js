@@ -2,8 +2,7 @@
 
 const store = require('../scripts/store.js');
 const showImagesTemplate = require('../scripts/templates/view-all-images.handlebars');
-const showHoverTemplate = require('../scripts/templates/click-small-image-to-big.handlebars');
-
+// const viewAllSurveys = require('./api.js');
 
 const success = (data) => {
     store.image = data.image;
@@ -129,20 +128,15 @@ const viewAllSurveysSuccess = (data) => {
   $('.img-container-info').show();
   $('.img-container-info-two').show();
   $('#signInBox').empty();
-  $('.imageImage').attr('title', (showHoverTemplate(data)));
 //creates a jquery click function
   jQuery(function ($) {
 //when this div class is clicked
-      $('.surveyImage').click(function () {
+      $('.imageImage').click(function () {
 //it empties and appends
           $('.img-container')
             .empty()
 //targets the html of this(the .imageImage DIV)
             .html($(this).html());
-          $('.img-container-info').empty();
-          $('.img-container-info-one').empty();
-          $('.img-container-info-two').empty();
-
       });
 
 

@@ -12,13 +12,13 @@ const config = require('./config');
 
 const authEvents = require('./auth/events.js');
 const backEndEvents = require('../backend/events.js');
-const backEndApi = require('../backend/api.js');
+// const backEndApi = require('../backend/api.js');
 
 $(() => {
   setAPIOrigin(location, config);
   authEvents.addHandlers();
   backEndEvents.addClueHandlers();
-  backEndApi.viewAllSurveys();
+  // backEndApi.viewAllSurveys();
   $('#signInBox').hide();
   $('#shakeHere').show().empty().append(' <-- Want To Make Your Own Survey?');
   // $('.surveysContainer').hide();
