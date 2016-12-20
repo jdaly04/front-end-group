@@ -8,7 +8,7 @@ const ui = require('./ui');
 const onQuestionAppend = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  console.log("data is ", data);
   let questionAppend = getFormFields(event.target);
   api.questionAppend(questionAppend)
     .then(ui.questionAppendSuccess)
