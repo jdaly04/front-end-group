@@ -96,6 +96,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   align-items: center;
 }
 
+#surveyBox {
+  width: 100%;
+  height: 70px;
+  text-shadow: 5px 5px 5px blue;
+  font-size: 115%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #signInBox {
   width: 100%;
   height: 30px;

@@ -2,9 +2,8 @@
 
 const store = require('../store.js');
 
-const success = (data) => {
+const success = () => {
   $('#messages').text("Success");
-  console.log(data);
 };
 
 const failure = (error) => {
@@ -14,7 +13,6 @@ const failure = (error) => {
 
 const signUpSuccess = (data) => {
   store.user = data.user;
-
   $('#signUpBox').text("You Are Signed Up!");
   $('#myModal2').modal('hide');
   $('#myModal1').modal('show');
@@ -28,7 +26,6 @@ const signUpFailure = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  console.log(data);
   $('#surveyDelete').show();
   $('#imageView').show();
   $('#createSurveys').show();
@@ -36,9 +33,6 @@ const signInSuccess = (data) => {
   $('#sign-out-main').show();
   $('#seeYourSurveys').show();
   $('#change-password').show();
-  $('#signUpBox')
-    .empty()
-    .append("User ID:", + data.user.id);
   $('#close').hide();
   $('#sign-up').hide();
   $('#sign-in').hide();
@@ -48,17 +42,11 @@ const signInSuccess = (data) => {
   $('.containera').hide();
   $('#changePwrd-main').show();
   $('#signInBox').show();
-  $('.options')
-    .empty()
-    .append("User ID:", + data.user.id);
-  $('.userIdMain')
-    .empty()
-    .append("User ID:", + data.user.id);
   $('#viewAllSurveys').show();
   $('#myModal1').modal('hide');
   $('#outANDin').hide();
   $('#surveyOptions').show();
-  $('#sign-in').trigger('RESET');
+  $('#sign-in').trigger('reset');
   $('#shakeHere').hide();
 };
 
@@ -102,13 +90,13 @@ const signOutSuccess = (data) => {
 };
 
 const changePasswordFailure = (data) => {
-  console.log(data);
+  store.user = data.user;
   $('#changePasswordBox').text("Maybe You Entered Something Wrong....Try Again.");
   $('#signInBox').text("Password NOT changed. You're Still Logged In Though!");
 };
 
 const changePasswordSuccess = (data) => {
-  console.log(data);
+  store.user = data.user;
   $('#signInBox').text('Write Down Your New Password!');
   $('#myModal3').modal('hide');
   $('#myModal1').modal('show');

@@ -20,7 +20,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 <!-- Brand and toggle get grouped for better mobile display -->
 <!-- Button for Modal 4 only appears AFTER SIGN IN -->
-    <button id="surveyOptions" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal4">Create Survey</button>
+    <button id="surveyOptions" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal4">Your Surveys</button>
 <!-- This link appears on page load.  It is the first step to using website and goes to modal 1 to sign up or sign in -->
     <a id="outANDin" class="navbar-brand" data-toggle="modal" href="#myModal1">Sign Up or Sign In</a>
 <!-- This div will SHAKE on sign in success.  Use it to append TEXT that you want to draw attention to -->
@@ -54,19 +54,6 @@
 <!-- This is the div that viewAllSurveys button populates with thumbnails using AJAX GET REQUEST -->
 
     <div class="surveysContainer"></div>
-
-<!-- This is where the Divs I used to append thumbnails to bigger images START -->
-
-    <div class="img-main">
-    <!-- Image -->
-      <div class="img-container"></div>
-    <!-- Imange data in the next three divs -->
-      <div class="img-container-info"></div>
-      <div class="img-container-info-one"></div>
-      <div class="img-container-info-two"></div>
-    </div>
-
-<!-- This is where the larger images divs END -->
 
 <!-- This is where the FOOTER for the main page STARTS -->
 
@@ -111,6 +98,7 @@
                 <input type="submit" name="submit" value="Sign In!">
               </fieldset>
             </form>
+<br>
         <div id="needAccountBox">
 <br>
           <a id="needAccount" class="navbar-brand" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal2">Need An Account?</a>
@@ -207,20 +195,11 @@
         <div class="modal-body">
 <br>
           <div id="seeYourSurveys">
-          <button id="seeYourSurveysAndAnswers" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal6">See YOUR SURVEYS AND ANSWERS</button>
+          <button id="seeYourSurveysAndAnswers" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal6">View Answers</button>
           </div>
 <br>
           <div id="createSurveys">
         <button id="createASurvey" class="btn btn-default test-button" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="#myModal5">Create Survey</button>
-          </div>
-          <div id="surveyDelete">
-            <form id="deleteSurvey">
-              <fieldset>
-                <legend>DELETE a Survey</legend>
-                <input type="text" name="id" placeholder="Survey ID HERE">
-                <input type="submit" name="submit" value="DELETE!">
-              </fieldset>
-            </form>
           </div>
         </div>
 
@@ -253,7 +232,8 @@
               </fieldset>
             </form>
           </div>
-          <div id="currentSurvey"></div>
+          <div id="surveyBox"></div>
+
         </div>
 
           <div class="modal-footer">

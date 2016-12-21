@@ -12,27 +12,8 @@ const failure = (error) => {
   console.error(error);
 };
 
-const viewImageSuccess = (data) => {
-    let img = $("<img>").attr("src", data.image.url).height(300).width(300);
-    $(".img-container")
-      .empty()
-      .show()
-      .append(img);
-  $('.img-container-info')
-      .empty()
-      .show()
-      .append("Image ID:", + data.image.id);
-  $('.img-container-info-one').hide();
-  $('.img-container-info-two')
-      .empty()
-      .show()
-      .append("User ID:", + data.image.user_id);
-  $('#signInBox')
-      .empty()
-      .append('Go to The Main Page to Take a Look');
+const viewImageSuccess = () => {
   $('#myModal1').modal('hide');
-  $('#viewImage').trigger('reset');
-
 };
 
 const viewImageFailure = (data) => {
@@ -42,91 +23,49 @@ const viewImageFailure = (data) => {
       .append('Maybe Not a Valid #?  Check the List!  Hover for Info!');
 };
 
-const questionAppendSuccess = (data) => {
- console.log(data);
- // let img = $("<img>").attr("src", data.image.url).height(300).width(300);
-//  $(".img-container")
-//    .empty()
-//     .show()
-//    .append(img);
-// $('.img-container-info')
-//     .empty()
-//     .show()
-//     .append("Image ID:", + data.image.id);
-// $('.img-container-info-one')
-//     .empty()
-//     .show()
-//     .append('Image Was Just Posted!');
-// $('.img-container-info-two')
-//     .empty()
-//     .show()
-//     .append("User ID:", + data.image.user_id);
-// $('#signInBox')
-//     .empty()
-//     .append('Image Was Posted As ID:', + data.image.id);
+const questionAppendSuccess = () => {
 $('#myModal1').modal('hide');
 $('#questionAppend').trigger('reset');
+$('#surveyBox').text('Survey Was Created! Check The List');
 
 };
 
-const questionAppendFailure = (data) => {
-console.log(data);
-$('#signInBox').text('Image Was NOT Posted!');
+const questionAppendFailure = () => {
+$('#surveyBox').text('Survey Was NOT Created! Choose Another Title Please.');
 };
 
 const deleteSurveySuccess = () => {
   $('#signInBox')
       .empty()
       .append('Image Was Deleted');
-    $(".img-container")
-      .empty();
-    $('.img-container-info')
-      .empty()
-      .text("Image Was Deleted!");
-    $('.img-container-info-one')
-      .empty();
-    $('.img-container-info-two')
-      .empty();
     $('#deleteSurvey').trigger('reset');
-
 };
 
-const deleteSurveyFailure = (data) => {
-  console.log(data);
+const deleteSurveyFailure = () => {
   $('#signInBox')
       .empty()
       .append('That May Not Belong To You (Or It May Not Exist)');
 };
 
-
-const updateImageSuccess = (data) => {
-  console.log(data);
+const updateImageSuccess = () => {
   $('#signInBox')
       .empty()
       .append('Image URL Was Updated');
   $('#updateImage').trigger('reset');
-
 };
 
-const updateImageFailure = (data) => {
-  console.log(data);
+const updateImageFailure = () => {
   $('#signInBox')
       .empty()
       .append('Nope.  Something Went Wrong.');
 };
 
 const viewAllSurveysFailure = (data) => {
-  console.log(data);
   $('#signInBox').empty();
 };
 
 const viewAllSurveysSuccess = (data) => {
-//this line takes the data.images and for each element and index, gives it a new title definition (which is strung together using handlebars `image id, url, user id`) which points to the element data and displays it.
-  // data.images.forEach((e,i)=>data.images[i].title = `Image ID: ${e.id} URL: ${e.url} User ID: ${e.user_id}`);
   $('.surveysContainer').show().html(showImagesTemplate(data));
-  $('.img-container').show();
-  $('.img-container-info').show();
-  $('.img-container-info-two').show();
   $('#signInBox').empty();
 //creates a jquery click function
   jQuery(function ($) {
