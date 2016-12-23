@@ -52,8 +52,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = (data) => {
   store.user = data.user;
-  $('#signInBoxTwo').show().text("Maybe You Entered Something Wrong....Try Again.");
-  $('#signUpBox').text('');
+  $('#signInBox').show().text("Maybe You Entered Something Wrong....Try Again.");
 };
 
 const signOutSuccess = (data) => {
@@ -61,8 +60,7 @@ const signOutSuccess = (data) => {
   $('#change-password').hide();
   $('#sign-out').hide();
   $('#sign-out-main').hide();
-  $('#signInBox').text('You Are Signed Out!');
-  $('#signInBox').empty();
+  $('#signInBox').empty().hide();
   $('#changePasswordBox').empty();
   $('.close').show();
   $('#sign-in').show();

@@ -2,6 +2,8 @@
 
 const store = require('../scripts/store.js');
 const showImagesTemplate = require('../scripts/templates/view-all-images.handlebars');
+const showYourSurveysTemplate = require('../scripts/templates/delete.handlebars');
+
 // const viewAllSurveys = require('./api.js');
 
 const success = (data) => {
@@ -12,26 +14,26 @@ const failure = (error) => {
   console.error(error);
 };
 
-const viewImageSuccess = () => {
+const viewYourSurveysSuccess = (data) => {
+  store.user = data.user;
+  $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#myModal1').modal('hide');
+  $('#myModal6').modal('show');
 };
 
-const viewImageFailure = (data) => {
-  console.log(data);
-  $('#signInBox')
-      .empty()
-      .append('Maybe Not a Valid #?  Check the List!  Hover for Info!');
+const viewYourSurveysFailure = () => {
 };
 
-const questionAppendSuccess = () => {
-$('#myModal1').modal('hide');
-$('#questionAppend').trigger('reset');
-$('#surveyBox').text('Survey Was Created! Check The List');
-
+const questionAppendSuccess = (data) => {
+  store.user = data.user;
+  $('#myModal1').modal('hide');
+  $('#questionAppend').trigger('reset');
+  $('#surveyBox').show().text('Survey Was Created! Check The List');
+  // $('#myModal5').modal('hide');
 };
 
 const questionAppendFailure = () => {
-$('#surveyBox').text('Survey Was NOT Created! Choose Another Title Please.');
+  $('#surveyBox').text('Survey Was NOT Created! Enter Valid Title Please.');
 };
 
 const deleteSurveySuccess = () => {
@@ -60,7 +62,7 @@ const updateImageFailure = () => {
       .append('Nope.  Something Went Wrong.');
 };
 
-const viewAllSurveysFailure = (data) => {
+const viewAllSurveysFailure = () => {
   $('#signInBox').empty();
 };
 
@@ -94,8 +96,8 @@ module.exports = {
   deleteSurveyFailure,
   updateImageSuccess,
   updateImageFailure,
-  viewImageSuccess,
-  viewImageFailure,
+  viewYourSurveysSuccess,
+  viewYourSurveysFailure,
   viewAllSurveysSuccess,
   viewAllSurveysFailure,
 

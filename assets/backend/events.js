@@ -31,18 +31,17 @@ const onUpdateImage = function (event) {
     .catch(ui.updateImageFailure);
 };
 
-const onViewImage = function (event) {
+const onViewYourSurveys = function (event) {
   event.preventDefault();
-  let viewImage = getFormFields(event.target);
-  api.viewImage(viewImage)
-    .then(ui.viewImageSuccess)
-    .catch(ui.viewImageFailure);
+  console.log(event);
+  api.viewYourSurveys()
+    .then(ui.viewYourSurveysSuccess)
+    .catch(ui.viewYourSurveysFailure);
 };
 
 const onViewAllSurveys = function (event) {
   event.preventDefault();
-  let viewAllSurveys = getFormFields(event.target);
-  api.viewAllSurveys(viewAllSurveys)
+  api.viewAllSurveys()
     .then(ui.viewAllSurveysSuccess)
     .catch(ui.viewAllSurveysFailure);
 };
@@ -51,7 +50,7 @@ const addClueHandlers = () => {
   $('#questionAppend').on('submit', onQuestionAppend);
   $('#deleteSurvey').on('submit', onDeleteSurvey);
   $('#updateImage').on('submit', onUpdateImage);
-  $('#viewImage').on('submit', onViewImage);
+  $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
 };
 
