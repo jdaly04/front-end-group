@@ -37,9 +37,9 @@ const updateImage = function (data) {
   });
 };
 
-const viewImage = function (data) {
+const viewYourSurveys = function (data) {
   return $.ajax({
-    url: store.host + '/images' + data.image.id,
+    url: store.host + '/surveys',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -63,6 +63,6 @@ module.exports = {
   questionAppend,
   deleteSurvey,
   updateImage,
-  viewImage,
+  viewYourSurveys,
   viewAllSurveys,
 };

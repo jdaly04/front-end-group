@@ -157,10 +157,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #seeYourSurveys {
   background: white;
   border-radius: 5px;
-  height: 90px;
+  height: 40px;
   text-align: center;
   width: auto;
 }
+
+#displayAllCurrentUsersSurveys {
+  max-height: 500px;
+  overflow-x: scroll;
+
+}
+
 
 #content-main {
     margin-top: 25%;
@@ -174,13 +181,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 125%;
 }
 //
+
+
 .imageImage {
   display: inline-flex;
   width: 100%;
   height: 80px;
-  overflow-x: scroll;
 }
 
+.deleteImageImage {
+  display: inline-flex;
+  width: 100%;
+  height: 80px;
+}
 
 .surveysContainer {
     max-width: 95%;  // or width instead of max-width
@@ -280,14 +293,46 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-top: 0;
 }
 
+#changePwrd-modal-5 {
+  text-color: white;
+  text-shadow: 2px 2px white;
+  font-size: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  float: right;
+  margin-top: 0;
+}
+
+#changePwrd-modal-6 {
+  text-color: white;
+  text-shadow: 2px 2px white;
+  font-size: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  float: right;
+  margin-top: 0;
+}
+
 #createASurvey {
   width: 20%;
   text-color: white;
   text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
-  margin-left: 40%;
-  margin-right: 40%;
+  // margin-left: 0%;
+  // margin-right: 40%;
+}
+
+#createASurvey-modal-6 {
+  width: 20%;
+  text-color: white;
+  text-shadow: 2px 2px white;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
 }
 
 #seeYourSurveysAndAnswers {
@@ -296,8 +341,28 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-shadow: 2px 2px white;
   justify-content: center;
   align-items: center;
-  margin-left: 40%;
-  margin-right: 40%;
+  // margin-left: 15%;
+  margin-right: 15%;
+}
+
+#viewYourSurveysAndAnswers {
+  width: 20%;
+  text-color: white;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  align-items: center;
+  // margin-left: 15%;
+  margin-right: 15%;
+}
+
+#viewYourSurveys {
+  width: 20%;
+  text-color: white;
+  text-shadow: 2px 2px white;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
 }
 
 #surveyOptions {
@@ -366,7 +431,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .deleteThis {
-  display: inline-flex;
+  display: inline-block;
   float: right;
   height: 50px;
   width: 40%;
