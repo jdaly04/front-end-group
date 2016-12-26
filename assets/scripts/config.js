@@ -2,8 +2,8 @@
 
 const config = {
   apiOrigins: {
-      // host: 'http://localhost:4741',
-    production: 'https://powerful-garden-17029.herokuapp.com/',
+    development: 'http://localhost:4741',
+    production: 'https://powerful-garden-17029.herokuapp.com/'
   },
 };
 
