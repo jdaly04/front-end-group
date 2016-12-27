@@ -6,7 +6,7 @@ const config = require('../scripts/config.js');
 
   const questionAppend = function (data) {
     return $.ajax({
-      url: config.apiOrigins + '/surveys',
+      url: config.apiOrigin + '/surveys',
       method: 'POST',
       headers: {
         Authorization: 'Token token=' + store.user.token,
@@ -19,7 +19,7 @@ const config = require('../scripts/config.js');
 
   const deleteSurvey = function (_id) {
     return $.ajax({
-      url: config.apiOrigins + '/surveys/' + _id,
+      url: config.apiOrigin + '/surveys/' + _id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
@@ -30,7 +30,7 @@ window.deleteSurvey = deleteSurvey;
 
 const updateImage = function (data) {
   return $.ajax({
-    url: config.apiOrigins + '/images' + data.image.id,
+    url: config.apiOrigin + '/images' + data.image.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -41,7 +41,7 @@ const updateImage = function (data) {
 
 const viewYourSurveys = function (data) {
   return $.ajax({
-    url: config.apiOrigins + '/surveys',
+    url: config.apiOrigin + '/surveys',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -52,7 +52,7 @@ const viewYourSurveys = function (data) {
 
 const viewAllSurveys = function (data) {
   return $.ajax({
-    url: config.apiOrigins + '/surveys',
+    url: config.apiOrigin + '/surveys',
     method: 'GET',
     // headers: {
     //   Authorization: 'Token token=' + store.user.token,

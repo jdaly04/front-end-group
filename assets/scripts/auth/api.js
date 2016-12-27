@@ -8,8 +8,8 @@ const config = require('../config.js');
 
 const signUp = (data) => {
   return $.ajax({
-    url: config.apiOrigins + '/sign-up',
-    // url: config.apiOrigins.production + 'sign-up',
+    url: config.apiOrigin + '/sign-up',
+    // url: config.apiOrigin.production + 'sign-up',
     method: 'POST',
     data,
   });
@@ -17,8 +17,8 @@ const signUp = (data) => {
 
 const signIn = (data) => {
   return $.ajax({
-    url: config.apiOrigins + '/sign-in',
-  // url: config.apiOrigins.production + 'sign-in',
+    url: config.apiOrigin + '/sign-in',
+  // url: config.apiOrigin.production + 'sign-in',
     method: 'POST',
     data,
   });
@@ -39,12 +39,12 @@ const signIn = (data) => {
 
 const changePassword = (data) => {
   return $.ajax({
-    url: config.apiOrigins + '/change-password/' + store.user._id,
-    // url: config.apiOrigins.production + 'change-password' + config.apiOrigins.production.user.id,
+    url: config.apiOrigin + '/change-password/' + store.user._id,
+    // url: config.apiOrigin.production + 'change-password' + config.apiOrigin.production.user.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,
-      // Authorization: 'Token token=' + config.apiOrigins.production.user.token,
+      // Authorization: 'Token token=' + config.apiOrigin.production.user.token,
     },
     data,
   });
@@ -52,7 +52,7 @@ const changePassword = (data) => {
 
   const signOut = () => {
     return $.ajax({
-      url: config.apiOrigins + '/sign-out/' + store.user._id,
+      url: config.apiOrigin + '/sign-out/' + store.user._id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
