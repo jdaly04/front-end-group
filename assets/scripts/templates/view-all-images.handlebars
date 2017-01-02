@@ -1,6 +1,12 @@
 
 {{#each surveys}}
   <div class="imageImage">
-        <button class="btn btn-warning" id="{{_id}}"> GO TO:  {{title}} </button>
-  </div>
+        <button class="btn btn-warning" id="{{_id}}" onclick="randomUrl()"> GO TO:  {{title}} </button>
+
+  <script>
+  function randomUrl() {
+      location.hash = Math.random().toString();
+  }
+  </script>
+</div>
 {{/each}}

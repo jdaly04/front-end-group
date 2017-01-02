@@ -2,8 +2,9 @@
 
 const store = require('../store.js');
 
-const success = () => {
+const success = (data) => {
   $('#messages').text("Success");
+  console.log(data);
 };
 
 const failure = (error) => {
@@ -13,6 +14,7 @@ const failure = (error) => {
 
 const signUpSuccess = (data) => {
   store.user = data.user;
+  success(data);
   $('#signUpBox').text("You Are Signed Up!");
   $('#myModal2').modal('hide');
   $('#myModal1').modal('show');
@@ -21,11 +23,13 @@ const signUpSuccess = (data) => {
 
 const signUpFailure = (data) => {
   store.user = data.user;
+  success(data);
   $('#signUpBox').text("Maybe You Entered Something Wrong....Or Maybe That Email Already Exists!");
 };
 
 const signInSuccess = (data) => {
   store.user = data.user;
+  success(data);
   $('#surveyDelete').show();
   $('#imageView').show();
   $('#createSurveys').show();
@@ -56,7 +60,7 @@ const signInFailure = (data) => {
 };
 
 const signOutSuccess = (data) => {
-  store.user = data.user;
+  success(data);
   $('#change-password').hide();
   $('#sign-out').hide();
   $('#sign-out-main').hide();
@@ -87,14 +91,14 @@ const signOutSuccess = (data) => {
   $('.img-container').empty();
 };
 
-const changePasswordFailure = (data) => {
-  store.user = data.user;
+const changePasswordFailure = () => {
+  // store.user = data.user;
   $('#changePasswordBox').text("Maybe You Entered Something Wrong....Try Again.");
   $('#signInBox').text("Password NOT changed. You're Still Logged In Though!");
 };
 
-const changePasswordSuccess = (data) => {
-  store.user = data.user;
+const changePasswordSuccess = () => {
+  // store.user = data.user;
   $('#signInBox').text('Write Down Your New Password!');
   $('#myModal3').modal('hide');
   $('#myModal1').modal('show');

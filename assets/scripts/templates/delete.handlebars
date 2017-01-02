@@ -1,9 +1,14 @@
 {{#each surveys}}
 
   <div class="imageImage">
-        <button class="btn btn-warning" id="{{_id}}"> GO TO:  {{title}} </button>
+         <a href="{{this.url}}" + "{{_id}}"><button class="btn btn-warning" id="{{_id}}"> GO TO:  {{title}} </button></a>
   </div>
   <div class="deleteImageImage">
-        <button  class="btn btn-danger deleteThis" id="{{_id}}">Delete<br>{{title}}</button>
+    <form id="delSurvey">
+      <fieldset>
+        <input type="text" value="{{_id}}">
+        <input type="submit" name="submit" value="DELETE!">
+      </fieldset>
+    </form>
   </div>
 {{/each}}
