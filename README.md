@@ -4,15 +4,16 @@ Front-End Deployed Site: https://github.com/The-Three-Amigos/front-end-group
 Back-End Deployed Site:https://powerful-garden-17029.herokuapp.com/
 Back-End Github Repo: https://github.com/The-Three-Amigos/back-end-group
 
-# APPLICATION DESCRIPTION
+## APPLICATION DESCRIPTION
 
-This is an application that allows a user to create customized,  single-question surveys, and view the associated answers.
+This is the client-side of a survey application. It was developed by a group of three students in General Assembly’s Web Development Immersive: Julia Daly, Ryan Roderick, and Joel Buzzanco.
+The application allows users to create custom surveys, have others answer their surveys, and view respective answers to surveys.
 
-# APPLICATION INSTRUCTIONS
+## APPLICATION INSTRUCTIONS
 
 Install dependencies with `npm install`.
 
-# TECHNOLOGIES USED
+## TECHNOLOGIES USED
 
 HTML5
 CSS3
@@ -23,18 +24,18 @@ Mongoose
 node.js
 JavaScript
 
-# GENERAL APPROACH
+## GENERAL APPROACH
 
 Three-person team utilized Agile development methodologies and tri-coding for transparency and efficiency. Stand-ups at beginning and end of day marked both micro- and macro- progress. Started with user stories, wireframes, ERD. Had a fluid process with two-way development (weren't afraid to change back-end or front-end depending on issue)
 
-# UNSOLVED PROBLEMS
+## UNSOLVED PROBLEMS
 
 - An unauthenticated survey-taker needs to be able to answer/respond to a survey
 - A survey author needs to be able to view the answers/responses associated with the surveys he/she has created.
 - An author needs to be able to delete a survey from the client. (can currently do so via curl request)
 - An author needs to be able to update the title of his/her survey via client (can currently do so via curl request).
 
-# USER STORIES
+## USER STORIES
 
 As a user, I want to be able to sign up.
 As a user, I want to be able to sign in.
@@ -45,8 +46,8 @@ As a user, I want to be able to see the responses to my surveys.
 As a user, I want to be able to edit my survey.
 As a user, I want to be able to delete my survey.
 
-# ERD:
+## ERD:
 http://imgur.com/gS6lYdk
 
-# WIREFRAMES:
+## WIREFRAMES:
 http://imgur.com/0ib9o9g
