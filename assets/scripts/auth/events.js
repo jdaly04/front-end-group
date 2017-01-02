@@ -1,5 +1,6 @@
 'use strict';
 
+const store = require('../store.js');
 const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
@@ -30,7 +31,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
+  let data = store.user;
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.failure);

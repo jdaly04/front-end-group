@@ -1,7 +1,7 @@
 'use strict';
 
 const getFormFields = require('../../lib/get-form-fields');
-
+// const store = require('../scripts/store.js');
 const api = require('./api');
 const ui = require('./ui');
 
@@ -17,23 +17,22 @@ const onQuestionAppend = function (event) {
 
 const onDeleteSurvey = function (event) {
   event.preventDefault();
-  let deleteSurvey = getFormFields(event.target);
-  api.deleteSurvey(deleteSurvey._id)
+  let data = getFormFields(event.target);
+  api.deleteSurvey(data)
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure);
 };
 
-const onUpdateImage = function (event) {
+const onappendAnswer = function (event) {
   event.preventDefault();
-  let updateImage = getFormFields(event.target);
-  api.updateImage(updateImage)
-    .then(ui.updateImageSuccess)
-    .catch(ui.updateImageFailure);
+  let appendAnswer = getFormFields(event.target);
+  api.appendAnswer(appendAnswer)
+    .then(ui.appendAnswerSuccess)
+    .catch(ui.appendAnswerFailure);
 };
 
 const onViewYourSurveys = function (event) {
   event.preventDefault();
-  console.log(event);
   api.viewYourSurveys()
     .then(ui.viewYourSurveysSuccess)
     .catch(ui.viewYourSurveysFailure);
@@ -48,8 +47,9 @@ const onViewAllSurveys = function (event) {
 
 const addClueHandlers = () => {
   $('#questionAppend').on('submit', onQuestionAppend);
-  $('#deleteSurvey').on('submit', onDeleteSurvey);
-  $('#updateImage').on('submit', onUpdateImage);
+  $('#displayAllCurrentUsersSurveys').on('submit', onDeleteSurvey);
+  // $('#delSurvey').on('submit', onDeleteSurvey);
+  $('#appendAnswer').on('submit', onappendAnswer);
   $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
 };

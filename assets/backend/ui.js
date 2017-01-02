@@ -7,7 +7,7 @@ const showYourSurveysTemplate = require('../scripts/templates/delete.handlebars'
 // const viewAllSurveys = require('./api.js');
 
 const success = (data) => {
-    store.image = data.image;
+  store.user = data.user;
 };
 
 const failure = (error) => {
@@ -15,54 +15,61 @@ const failure = (error) => {
 };
 
 const viewYourSurveysSuccess = (data) => {
-  store.user = data.user;
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
 };
 
-const viewYourSurveysFailure = () => {
+const viewYourSurveysFailure = (data) => {
+  console.log(data);
 };
 
 const questionAppendSuccess = (data) => {
   store.user = data.user;
+  console.log(data);
   $('#myModal1').modal('hide');
   $('#questionAppend').trigger('reset');
   $('#surveyBox').show().text('Survey Was Created! Check The List');
   // $('#myModal5').modal('hide');
 };
 
-const questionAppendFailure = () => {
+const questionAppendFailure = (data) => {
+  console.log(data);
   $('#surveyBox').text('Survey Was NOT Created! Enter Valid Title Please.');
 };
 
-const deleteSurveySuccess = () => {
+const deleteSurveySuccess = (data) => {
+  console.log(data);
   $('#signInBox')
       .empty()
       .append('Image Was Deleted');
     $('#deleteSurvey').trigger('reset');
 };
 
-const deleteSurveyFailure = () => {
+const deleteSurveyFailure = (data) => {
+  console.log("data is ", data);
   $('#signInBox')
       .empty()
       .append('That May Not Belong To You (Or It May Not Exist)');
 };
 
-const updateImageSuccess = () => {
+const appendAnswerSuccess = (data) => {
+  console.log(data);
   $('#signInBox')
       .empty()
       .append('Image URL Was Updated');
-  $('#updateImage').trigger('reset');
+  $('#appendAnswer').trigger('reset');
 };
 
-const updateImageFailure = () => {
+const appendAnswerFailure = (data) => {
+  console.log(data);
   $('#signInBox')
       .empty()
       .append('Nope.  Something Went Wrong.');
 };
 
-const viewAllSurveysFailure = () => {
+const viewAllSurveysFailure = (data) => {
+  console.log(data);
   $('#signInBox').empty();
 };
 
@@ -74,10 +81,12 @@ const viewAllSurveysSuccess = (data) => {
 //when this div class is clicked
       $('.imageImage').click(function () {
 //it empties and appends
-          $('.img-container')
+          $(".surveysContainer")
+
             .empty()
 //targets the html of this(the .imageImage DIV)
-            .html($(this).html());
+            // .html($(this).html());
+
       });
 
 
@@ -94,11 +103,10 @@ module.exports = {
   questionAppendFailure,
   deleteSurveySuccess,
   deleteSurveyFailure,
-  updateImageSuccess,
-  updateImageFailure,
+  appendAnswerSuccess,
+  appendAnswerFailure,
   viewYourSurveysSuccess,
   viewYourSurveysFailure,
   viewAllSurveysSuccess,
   viewAllSurveysFailure,
-
 };

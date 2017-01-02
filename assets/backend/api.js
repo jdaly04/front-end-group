@@ -17,7 +17,7 @@ const config = require('../scripts/config.js');
   window.questionAppend = questionAppend;
 
 
-  const deleteSurvey = function (_id) {
+  const deleteSurvey = function (id) {
     return $.ajax({
       url: config.apiOrigin + '/surveys/' + _id,
       method: 'DELETE',
@@ -28,7 +28,7 @@ const config = require('../scripts/config.js');
   };
 window.deleteSurvey = deleteSurvey;
 
-const updateImage = function (data) {
+const appendAnswer = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/images' + data.image.id,
     method: 'PATCH',
@@ -64,7 +64,7 @@ const viewAllSurveys = function (data) {
 module.exports = {
   questionAppend,
   deleteSurvey,
-  updateImage,
+  appendAnswer,
   viewYourSurveys,
   viewAllSurveys,
 };
