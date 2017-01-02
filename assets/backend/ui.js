@@ -82,11 +82,13 @@ const viewAllSurveysSuccess = (data) => {
       $('.imageImage').click(function () {
 //it empties and appends
           $(".surveysContainer")
-
             .empty()
 //targets the html of this(the .imageImage DIV)
-            // .html($(this).html());
-
+            .html($(this).html());
+            // .append($(this).data());
+            $(".surveysAnswers")
+              .empty();
+              // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
       });
 
 
