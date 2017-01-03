@@ -17,14 +17,16 @@ const failure = (error) => {
 
 const viewYourSurveysSuccess = (data) => {
   // store.user = data.user;
-  // console.log("data is ", data);
-  $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
+  console.log("data is ", data);
+  let newData = {surveys:data.survey}
+  // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
+  $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(newData));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
 };
 
 const viewYourSurveysFailure = (data) => {
-  console.log("data is", data);
+  console.log("data fail is", data);
 };
 
 const questionAppendSuccess = (data) => {
@@ -77,6 +79,7 @@ const viewAllSurveysFailure = (data) => {
 };
 
 const viewAllSurveysSuccess = (data) => {
+console.log(data);
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
   //creates a jquery click function

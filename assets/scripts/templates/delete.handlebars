@@ -1,6 +1,23 @@
 {{#each surveys}}
-
+<h1>hello</h1>
   <div class="imageImage">
          <button class="btn btn-warning" id="{{_id}}"> GO TO:  {{title}} </button>
 </div>
+<div class="deleteImageImage">
+  <form class="delSurvey">
+    <fieldset>
+      <input type="text" name="survey_id" value="{{_id}}">
+      <input type="submit" name="submit" value="DELETE!">
+    </fieldset>
+  </form>
+</div>
+{{!-- <script>
+  jQuery(function ($) {
+    $('.delSurvey').on('submit', function () {
+      event.preventDefault();
+      console.log("click handler <delSurvey> fired");
+      // return false;
+    });
+  });
+</script> --}}
 {{/each}}

@@ -16,9 +16,11 @@ const onQuestionAppend = function (event) {
 };
 
 const onDeleteSurvey = function (event) {
+
   event.preventDefault();
   let deleteSurvey = getFormFields(event.target);
-  api.deleteSurvey(deleteSurvey)
+console.log(event.target);
+  api.deleteSurvey(deleteSurvey["survey_id"])
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure);
 };
@@ -49,7 +51,10 @@ const onViewAllSurveys = function (event) {
 const addClueHandlers = () => {
   $('#questionAppend').on('submit', onQuestionAppend);
   // $('#displayAllCurrentUsersSurveys').on('submit', onDeleteSurvey);
-  $('.delSurvey').on('submit', onDeleteSurvey);
+  $('body').on('submit','.delSurvey', onDeleteSurvey);
+  $('body').on('click','.svy-btn', function(){
+    location.hash = $(this).attr('data-id');
+  });
   $('#answerAppend').on('submit', onAppendAnswer);
   $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
