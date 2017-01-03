@@ -40,8 +40,9 @@ const appendAnswer = function (data) {
 };
 
 const viewYourSurveys = function (data) {
+  console.log("data is " + data);
   return $.ajax({
-    url: config.apiOrigin + '/surveys',
+    url: config.apiOrigin + '/my-surveys',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,

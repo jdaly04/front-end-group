@@ -16,6 +16,7 @@ const failure = (error) => {
 };
 
 const viewYourSurveysSuccess = (data) => {
+  console.log("data is " + data);
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
