@@ -17,14 +17,15 @@ const onQuestionAppend = function (event) {
 
 const onDeleteSurvey = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.deleteSurvey(data)
+  let deleteSurvey = getFormFields(event.target);
+  api.deleteSurvey(deleteSurvey)
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure);
 };
 
-const onappendAnswer = function (event) {
+const onAppendAnswer = function (event) {
   event.preventDefault();
+console.log(event);
   let appendAnswer = getFormFields(event.target);
   api.appendAnswer(appendAnswer)
     .then(ui.appendAnswerSuccess)
@@ -47,9 +48,9 @@ const onViewAllSurveys = function (event) {
 
 const addClueHandlers = () => {
   $('#questionAppend').on('submit', onQuestionAppend);
-  $('#displayAllCurrentUsersSurveys').on('submit', onDeleteSurvey);
-  // $('#delSurvey').on('submit', onDeleteSurvey);
-  $('#appendAnswer').on('submit', onappendAnswer);
+  // $('#displayAllCurrentUsersSurveys').on('submit', onDeleteSurvey);
+  $('#delSurvey').on('submit', onDeleteSurvey);
+  $('#answerAppend').on('submit', onAppendAnswer);
   $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
 };

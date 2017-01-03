@@ -21,7 +21,6 @@ $(() => {
   // backEndApi.viewAllSurveys();
   $('#signInBox').hide();
   $('#shakeHere').show().empty().append(' <-- Want To Make Your Own Survey?');
-  // $('.surveysContainer').hide();
 //links
   $('#changePwrd').hide();
   $('#changePwrd-main').hide();

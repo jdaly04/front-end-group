@@ -202,6 +202,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     overflow-x: scroll;
   }
 
+.surveysAnswers {
+  max-width: 95%;
+  max-height: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-fade {
   opacity: 0;
   &.in {opacity: .7;};
