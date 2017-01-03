@@ -49,7 +49,7 @@ const onViewAllSurveys = function (event) {
 const addClueHandlers = () => {
   $('#questionAppend').on('submit', onQuestionAppend);
   // $('#displayAllCurrentUsersSurveys').on('submit', onDeleteSurvey);
-  $('#delSurvey').on('submit', onDeleteSurvey);
+  $('.delSurvey').on('submit', onDeleteSurvey);
   $('#answerAppend').on('submit', onAppendAnswer);
   $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
