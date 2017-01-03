@@ -17,9 +17,10 @@ const config = require('../scripts/config.js');
   window.questionAppend = questionAppend;
 
 
-  const deleteSurvey = function (data) {
+  const deleteSurvey = function (id) {
+console.log(id);
     return $.ajax({
-      url: config.apiOrigin + '/surveys/' + data.surveys.id,
+      url: config.apiOrigin + '/surveys/' + id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
