@@ -54,6 +54,7 @@
 <!-- This is the div that viewAllSurveys button populates with thumbnails using AJAX GET REQUEST -->
 
     <div class="surveysContainer"></div>
+    <div class="surveysAnswers"></div>
 
 <!-- This is where the FOOTER for the main page STARTS -->
 
@@ -252,6 +253,17 @@
         <div class="modal-body">
           <div id="displayAllCurrentUsersSurveys">
           </div>
+          <div class="deleteImageImage">
+            <form id="delSurvey">
+              <fieldset>
+                <input type="text" value="{{_id}}">
+                <input type="submit" name="submit" value="DELETE!">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+
         </div>
           <div class="modal-footer">
           </div>

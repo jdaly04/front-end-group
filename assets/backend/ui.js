@@ -3,6 +3,7 @@
 const store = require('../scripts/store.js');
 const showImagesTemplate = require('../scripts/templates/view-all-images.handlebars');
 const showYourSurveysTemplate = require('../scripts/templates/delete.handlebars');
+const answersTemplate = require('../scripts/templates/answers.handlebars');
 
 // const viewAllSurveys = require('./api.js');
 
@@ -76,23 +77,26 @@ const viewAllSurveysFailure = (data) => {
 const viewAllSurveysSuccess = (data) => {
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
-//creates a jquery click function
-  jQuery(function ($) {
-//when this div class is clicked
-      $('.imageImage').click(function () {
-//it empties and appends
-          $(".surveysContainer")
+  //creates a jquery click function
+    jQuery(function ($) {
+  //when this div class is clicked
+        $('.imageImage').click(function () {
+  //it empties and appends
+            $(".surveysContainer")
+              .empty()
+  //targets the html of this(the .imageImage DIV)
+              .html($(this).data('src', 'title'));
+              // .append($(this).data());
+              $(".surveysAnswers")
+                .empty()
+                .show().html(answersTemplate(data));
 
-            .empty()
-//targets the html of this(the .imageImage DIV)
-            // .html($(this).html());
-
-      });
+                // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
+        });
 
 
 
-  });
-
+    });
 };
 
 
