@@ -16,18 +16,19 @@ const failure = (error) => {
 };
 
 const viewYourSurveysSuccess = (data) => {
-  console.log("data is ", data);
+  // store.user = data.user;
+  // console.log("data is ", data);
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
 };
 
 const viewYourSurveysFailure = (data) => {
-  console.log(data);
+  console.log("data is", data);
 };
 
 const questionAppendSuccess = (data) => {
-  store.user = data.user;
+  // store.user = data.user;
   console.log(data);
   $('#myModal1').modal('hide');
   $('#questionAppend').trigger('reset');

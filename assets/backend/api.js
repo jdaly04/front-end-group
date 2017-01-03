@@ -41,7 +41,6 @@ const appendAnswer = function (data) {
 };
 
 const viewYourSurveys = function (data) {
-  console.log("data is " + data);
   return $.ajax({
     url: config.apiOrigin + '/my-surveys',
     method: 'GET',

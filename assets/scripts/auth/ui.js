@@ -60,6 +60,7 @@ const signInFailure = (data) => {
 };
 
 const signOutSuccess = (data) => {
+  store.user = data.user;
   success(data);
   $('#change-password').hide();
   $('#sign-out').hide();
