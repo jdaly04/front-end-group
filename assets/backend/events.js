@@ -48,7 +48,12 @@ const onViewAllSurveys = function (event) {
 
 const onChangeTitle = function (event) {
   event.preventDefault();
-  api.changeTitle()
+  let data = getFormFields(this);
+  // console.log(event.target);
+  // let id = data.survey._id;
+  console.log('data.survey._id', data.survey._id);
+  // console.log('this is id and data', id, data);
+  api.changeTitle(data)
     .then(ui.changeTitleSuccess)
     .catch(ui.changeTitleFailure);
 };

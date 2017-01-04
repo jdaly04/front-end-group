@@ -65,8 +65,8 @@ const viewAllSurveys = function (data) {
 };
 
 const changeTitle = function (data) {
-  let id = data.survey.id;
-  delete(data.survey.id);
+     let id = data.survey._id;
+     delete(data.survey.id);
   return $.ajax({
     url: config.apiOrigin + '/surveys/' + id,
     method: 'PATCH',

@@ -30,11 +30,12 @@ const viewYourSurveysFailure = (data) => {
 };
 
 const questionAppendSuccess = (data) => {
-  // store.user = data.user;
-  console.log(data);
+   store.survey = data.survey;
+  console.log('this is data.survey._id', data.survey._id);
   $('#myModal1').modal('hide');
   $('#questionAppend').trigger('reset');
   $('#surveyBox').show().text('Survey Was Created! Check The List');
+  return data.survey._id;
   // $('#myModal5').modal('hide');
 };
 
