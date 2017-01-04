@@ -31,8 +31,8 @@ window.deleteSurvey = deleteSurvey;
 
 const appendAnswer = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/images' + data.image.id,
-    method: 'PATCH',
+    url: config.apiOrigin + '/answers' + '586c281b171b3f743a52be9e',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,
     },

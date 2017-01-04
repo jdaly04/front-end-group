@@ -184,12 +184,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 .imageImage {
+  justify-content: center;
+  align-items: center;
   display: inline-flex;
   width: 100%;
   height: 80px;
 }
 
 .deleteImageImage {
+  justify-content: center;
+  align-items: center;
   display: inline-flex;
   width: 100%;
   height: 80px;

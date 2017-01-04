@@ -18,7 +18,7 @@ const failure = (error) => {
 const viewYourSurveysSuccess = (data) => {
   // store.user = data.user;
   console.log("data is ", data);
-  let newData = {surveys:data.survey}
+  let newData = {surveys:data.survey};
   // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(newData));
   $('#myModal1').modal('hide');
@@ -48,7 +48,13 @@ const deleteSurveySuccess = (data) => {
   $('#signInBox')
       .empty()
       .append('Image Was Deleted');
-    $('#deleteSurvey').trigger('reset');
+  $('#deleteSurvey').trigger('reset');
+  $('.surveysContainer')
+      .empty()
+      .show()
+      .append('That Survey was Deleted!');
+      $('#myModal6').modal('hide');
+
 };
 
 const deleteSurveyFailure = (data) => {
@@ -90,12 +96,16 @@ console.log(data);
             $(".surveysContainer")
               .empty()
   //targets the html of this(the .imageImage DIV)
-              .html($(this).data('src', 'title'));
+              .html($(this).data('src', 'question'));
               // .append($(this).data());
               $(".surveysAnswers")
                 .empty()
                 .show().html(answersTemplate(data));
-
+                $('#answerAppend').on('submit', function () {
+                  event.preventDefault();
+                  console.log("click handler <answerAppend> fired");
+                  // return false;
+                });
                 // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
         });
 

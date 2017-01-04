@@ -16,10 +16,8 @@ const onQuestionAppend = function (event) {
 };
 
 const onDeleteSurvey = function (event) {
-
   event.preventDefault();
   let deleteSurvey = getFormFields(event.target);
-console.log(event.target);
   api.deleteSurvey(deleteSurvey["survey_id"])
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure);

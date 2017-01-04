@@ -1,9 +1,16 @@
 {{#each surveys}}
-<h1>hello</h1>
-  <div class="imageImage">
-         <button class="btn btn-warning" id="{{_id}}"> GO TO:  {{title}} </button>
+
+<div class="imageImage">
+    <h1>Title: {{title}}</h1>
 </div>
-<div class="deleteImageImage">
+<br>
+<div class="imageImage">
+    <h4>Question: {{question}}</h4>
+</div>
+<div class="imageImage">
+    <h4>Answers: {{answers}}</h4>
+</div>
+<div class="imageImage">
   <form class="delSurvey">
     <fieldset>
       <input type="text" name="survey_id" value="{{_id}}">
@@ -11,13 +18,5 @@
     </fieldset>
   </form>
 </div>
-{{!-- <script>
-  jQuery(function ($) {
-    $('.delSurvey').on('submit', function () {
-      event.preventDefault();
-      console.log("click handler <delSurvey> fired");
-      // return false;
-    });
-  });
-</script> --}}
+<hr>
 {{/each}}
