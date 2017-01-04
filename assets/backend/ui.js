@@ -4,7 +4,7 @@ const store = require('../scripts/store.js');
 const showImagesTemplate = require('../scripts/templates/view-all-images.handlebars');
 const showYourSurveysTemplate = require('../scripts/templates/delete.handlebars');
 const answersTemplate = require('../scripts/templates/answers.handlebars');
-
+const backendApi = require('./api');
 // const viewAllSurveys = require('./api.js');
 
 const success = (data) => {
@@ -104,6 +104,17 @@ console.log(data);
                 $('#answerAppend').on('submit', function () {
                   event.preventDefault();
                   console.log("click handler <answerAppend> fired");
+                  let answer = $('#answerInput').val();
+                  let id = $('#surveyId').text();
+                  let survey = {
+                    survey: {
+                      id: id,
+                      answers: answer
+                    }
+                  };
+                  backendApi.appendAnswer(survey)
+                  .then(console.log)
+                  .catch(console.error);
                   // return false;
                 });
                 // .append(FORM FOR ANSWERS NEEDS TO GO HERE)

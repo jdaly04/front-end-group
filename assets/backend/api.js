@@ -30,13 +30,17 @@ console.log(id);
 window.deleteSurvey = deleteSurvey;
 
 const appendAnswer = function (data) {
+  console.log("data is ", data);
+  let id = data.survey.id;
+  delete(data.survey.id);
+console.log("data is ", data);
   return $.ajax({
-    url: config.apiOrigin + '/answers' + '586c281b171b3f743a52be9e',
+    url: config.apiOrigin + '/answers/' + id,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,
     },
-    data
+    data,
   });
 };
 
