@@ -30,10 +30,8 @@ console.log(id);
 window.deleteSurvey = deleteSurvey;
 
 const appendAnswer = function (data) {
-  console.log("data is ", data);
   let id = data.survey.id;
   delete(data.survey.id);
-console.log("data is ", data);
   return $.ajax({
     url: config.apiOrigin + '/answers/' + id,
     method: 'POST',
@@ -45,7 +43,6 @@ console.log("data is ", data);
 };
 
 const viewYourSurveys = function (data) {
-console.log(data);
   return $.ajax({
     url: config.apiOrigin + '/my-surveys',
     method: 'GET',
@@ -67,10 +64,24 @@ const viewAllSurveys = function (data) {
   });
 };
 
+const changeTitle = function (data) {
+  let id = data.survey.id;
+  delete(data.survey.id);
+  return $.ajax({
+    url: config.apiOrigin + '/surveys/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data,
+  });
+};
+
 module.exports = {
   questionAppend,
   deleteSurvey,
   appendAnswer,
   viewYourSurveys,
   viewAllSurveys,
+  changeTitle,
 };

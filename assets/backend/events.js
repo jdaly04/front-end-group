@@ -46,16 +46,25 @@ const onViewAllSurveys = function (event) {
     .catch(ui.viewAllSurveysFailure);
 };
 
+const onChangeTitle = function (event) {
+  event.preventDefault();
+  api.changeTitle()
+    .then(ui.changeTitleSuccess)
+    .catch(ui.changeTitleFailure);
+};
+
 const addClueHandlers = () => {
   $('#questionAppend').on('submit', onQuestionAppend);
   // $('#displayAllCurrentUsersSurveys').on('submit', onDeleteSurvey);
   $('body').on('submit','.delSurvey', onDeleteSurvey);
+  $('body').on('submit','.changeTitle', onChangeTitle);
   $('body').on('click','.svy-btn', function(){
     location.hash = $(this).attr('data-id');
   });
   // $('#answerAppend').on('submit', onAppendAnswer);
   $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
+  $('#changeTitle').on('submit', onChangeTitle);
 };
 
 

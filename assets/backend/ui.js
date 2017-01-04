@@ -84,6 +84,14 @@ const viewAllSurveysFailure = (data) => {
   $('#signInBox').empty();
 };
 
+const changeTitleSuccess = (data) => {
+  console.log(data);
+};
+
+const changeTitleFailure = (data) => {
+  console.log(data);
+};
+
 const viewAllSurveysSuccess = (data) => {
 console.log(data);
   $('.surveysContainer').show().html(showImagesTemplate(data));
@@ -103,7 +111,7 @@ console.log(data);
                 .show().html(answersTemplate(data));
                 $('#answerAppend').on('submit', function () {
                   event.preventDefault();
-                  console.log("click handler <answerAppend> fired");
+
                   let answer = $('#answerInput').val();
                   let id = $('#surveyId').text();
                   let survey = {
@@ -139,4 +147,6 @@ module.exports = {
   viewYourSurveysFailure,
   viewAllSurveysSuccess,
   viewAllSurveysFailure,
+  changeTitleSuccess,
+  changeTitleFailure,
 };
