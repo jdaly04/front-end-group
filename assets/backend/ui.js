@@ -98,6 +98,8 @@ console.log(data);
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
   $('#answerAppend').hide();
+  $('.survID').hide();
+
   //creates a jquery click function
     jQuery(function ($) {
   //when this div class is clicked
@@ -129,6 +131,7 @@ console.log(data);
                 });
                 // .append(FORM FOR ANSWERS NEEDS TO GO HERE)
         });
+
 
 
 

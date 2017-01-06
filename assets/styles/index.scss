@@ -373,6 +373,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-left: 5%;
 }
 
+#createASurvey {
+  text-color: white;
+  text-shadow: 2px 2px white;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  margin-left: 5%;
+}
+
 .btn-default {
   margin-right: auto;
   margin-left: auto;
