@@ -45,7 +45,6 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut);
   $('#sign-out-main').on('click', onSignOut);
   $('#sign-out-pwrd').on('click', onSignOut);
-  $('#sign-out-modal-four').on('click', onSignOut);
   $('#sign-out-modal-five').on('click', onSignOut);
   $('#sign-out-modal-six').on('click', onSignOut);
 

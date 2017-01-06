@@ -67,7 +67,7 @@ const addClueHandlers = () => {
     location.hash = $(this).attr('data-id');
   });
   // $('#answerAppend').on('submit', onAppendAnswer);
-  $('#viewYourSurveysAndAnswers').on('click', onViewYourSurveys);
+  $('#surveyOptions').on('click', onViewYourSurveys);
   $('#viewAllSurveys').on('click', onViewAllSurveys);
   $('#changeTitle').on('submit', onChangeTitle);
 };

@@ -31,5 +31,6 @@ $(() => {
   $('#sign-out').hide();
   $('#sign-out-main').hide();
   $('#surveyBox').hide();
+  $('#createASurvey').hide();
 
 });

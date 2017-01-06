@@ -1,7 +1,7 @@
 'use strict';
 
 const store = require('../scripts/store.js');
-const showImagesTemplate = require('../scripts/templates/view-all-images.handlebars');
+const showImagesTemplate = require('../scripts/templates/view-all-surveys.handlebars');
 const showYourSurveysTemplate = require('../scripts/templates/delete.handlebars');
 const answersTemplate = require('../scripts/templates/answers.handlebars');
 const backendApi = require('./api');
@@ -69,7 +69,7 @@ const appendAnswerSuccess = (data) => {
   console.log(data);
   $('#signInBox')
       .empty()
-      .append('Image URL Was Updated');
+      .append('Answer Was Submitted');
   $('#appendAnswer').trigger('reset');
 };
 
@@ -77,7 +77,7 @@ const appendAnswerFailure = (data) => {
   console.log(data);
   $('#signInBox')
       .empty()
-      .append('Nope.  Something Went Wrong.');
+      .append('Sorry! Something Went Wrong.');
 };
 
 const viewAllSurveysFailure = (data) => {
@@ -97,6 +97,7 @@ const viewAllSurveysSuccess = (data) => {
 console.log(data);
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
+  $('#answerAppend').hide();
   //creates a jquery click function
     jQuery(function ($) {
   //when this div class is clicked

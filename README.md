@@ -30,10 +30,8 @@ Three-person team utilized Agile development methodologies and tri-coding for tr
 
 ## UNSOLVED PROBLEMS
 
-- An unauthenticated survey-taker needs to be able to answer/respond to a survey
-- A survey author needs to be able to view the answers/responses associated with the surveys he/she has created.
-- An author needs to be able to delete a survey from the client. (can currently do so via curl request)
-- An author needs to be able to update the title of his/her survey via client (can currently do so via curl request).
+- Improve UI / Aesthetics.
+
 
 ## USER STORIES
 

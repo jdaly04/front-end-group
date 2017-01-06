@@ -52,6 +52,7 @@ const signInSuccess = (data) => {
   $('#surveyOptions').show();
   $('#sign-in').trigger('reset');
   $('#shakeHere').hide();
+  $('#createASurvey').show();
 };
 
 const signInFailure = (data) => {
@@ -91,6 +92,7 @@ const signOutSuccess = (data) => {
   $('.surveysContainer').empty();
   $('.img-container').empty();
   $('#answerAppend').hide();
+  $('#createASurvey').hide();
 };
 
 const changePasswordFailure = () => {
