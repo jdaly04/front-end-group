@@ -18,11 +18,33 @@ const failure = (error) => {
 const viewYourSurveysSuccess = (data) => {
   // store.user = data.user;
   console.log("data is ", data);
+  // debugger;
   let newData = {surveys:data.survey};
+  // debugger;
+  console.log('data length is ', data.survey.length);
+  // let count = 0;
+  for (let i = 0; i < data.survey.length; i++) {
+    let answersArr = data.survey[i].answers;
+    // for(let j=0; j < answersArr.length; j++) {
+    //   if(answersArr[j] === answersArr[j+1]) {
+    //     count ++;
+    //   }
+    // }
+
+    let sameAnswers = {};
+    let count = 0;
+    debugger;
+      for (let i = 0; i < answersArr.length; i++) {
+      sameAnswers[answersArr[i]] = count++;
+      //need to iterate through array elements, which are strings. When you come to a unique string, add it as a key in the empty object. When you come to the same string again.. add 1 to the "count" (value) for that specific key (answer)
+    }
+    console.log(sameAnswers);
+
   // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(newData));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
+  }
 };
 
 const viewYourSurveysFailure = (data) => {
