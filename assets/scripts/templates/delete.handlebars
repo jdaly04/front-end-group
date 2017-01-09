@@ -8,7 +8,11 @@
     <h4>Question: {{question}}</h4>
 </div>
 <div class="imageImage">
-    <h4>Answers: {{answers}}</h4>
+  <h4>Answers:
+    {{#each answers as |answer|}}
+    <br> {{ @key }}: {{ this }}
+    {{/each}}
+  </h4>
 </div>
 <div class="imageImage">
   <form class="delSurvey">

@@ -168,6 +168,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 }
 
+#showCountofAnswers {
+  max-height: 500px;
+  overflow-x: scroll;
+
+}
+
 
 #content-main {
     margin-top: 25%;

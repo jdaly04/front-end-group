@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../scripts/store.js');
+// const viewCount = require('../scripts/templates/view-count.handlebars');
 const showImagesTemplate = require('../scripts/templates/view-all-surveys.handlebars');
 const showYourSurveysTemplate = require('../scripts/templates/delete.handlebars');
 const answersTemplate = require('../scripts/templates/answers.handlebars');
@@ -17,36 +18,24 @@ const failure = (error) => {
 
 const viewYourSurveysSuccess = (data) => {
   // store.user = data.user;
-  console.log("data is ", data);
-  // debugger;
+  let array = data.survey.map(function(survey) {
+    survey.answers = survey.answers.reduce((prev, curr) => {
+      if (!prev[curr]) {
+        prev[curr] = 1;
+      } else {
+        prev[curr]++;
+      }
+      return prev;
+    }, {});
+    return survey;
+  });
+
+  console.log("answers are", array);
   let newData = {surveys:data.survey};
-  // debugger;
-  console.log('data length is ', data.survey.length);
-  // let count = 0;
-  for (let i = 0; i < data.survey.length; i++) {
-    let answersArr = data.survey[i].answers;
-    // for(let j=0; j < answersArr.length; j++) {
-    //   if(answersArr[j] === answersArr[j+1]) {
-    //     count ++;
-    //   }
-    // }
-
-    let sameAnswers = {};
-    let count = 0;
-    debugger;
-      for (let i = 0; i < answersArr.length; i++) {
-      sameAnswers[answersArr[i]] = count++;
-      //need to iterate through array elements, which are strings. When you come to a unique string, add it as a key in the empty object. When you come to the same string again.. add 1 to the "count" (value) for that specific key (answer)
-    }
-    console.log(sameAnswers);
-
-  // $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(data));
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(newData));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
-  }
 };
-
 const viewYourSurveysFailure = (data) => {
   console.log("data fail is", data);
 };
@@ -143,7 +132,7 @@ console.log(data);
                   let survey = {
                     survey: {
                       id: id,
-                      answers: answer
+                      answers: answer,
                     }
                   };
                   backendApi.appendAnswer(survey)
