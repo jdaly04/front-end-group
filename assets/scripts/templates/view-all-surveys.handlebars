@@ -1,9 +1,10 @@
-
 {{#each surveys}}
   <div class="imageImage">
-      <div class="col-md-6"><h3>Title: {{title}}</h3></div>
-      <div class="col-md-6"><h4>Question: {{question}}</h4></div>
-      <div class="survID"><h4 id="surveyId">{{_id}}</h4></div>
-  </div>
-
+    <span class="svy-btn" data-id="{{_id}}">
+      <h2>Title: {{title}}<br />
+      Question: {{question}}</h2>
+      <span id="surveyId" hidden="true">{{_id}}</span>
+    </span>
+</div>
+<hr>
 {{/each}}
