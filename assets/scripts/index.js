@@ -20,7 +20,7 @@ $(() => {
   backEndEvents.addClueHandlers();
   // backEndApi.viewAllSurveys();
   $('#signInBox').hide();
-  $('#shakeHere').show().empty().append(' <-- Want To Make Your Own Survey?');
+  $('#shakeHere').show().empty().append(' <-- Sign Up and/or In to Get Started!');
   // $('.surveysContainer').hide();
 //links
   $('#changePwrd').hide();

@@ -24,6 +24,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   color: white;
 }
 
+body {
+  background: #F5FFFA;
+}
+
 #shakeHere {
   color: red !important;
   display: flex;
@@ -41,11 +45,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .h1 {
+  font-family: Helvetica;
   text-align: center;
 }
 
 .navbar {
-  background-color: white;
+  background-color: #F5F5F5;
 }
 
 .containera {
