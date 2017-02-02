@@ -22,15 +22,7 @@ const onDeleteSurvey = function (event) {
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure);
 };
-//
-// const onAppendAnswer = function (event) {
-//   event.preventDefault();
-// console.log("data is", event);
-//   let appendAnswer = getFormFields(event.target);
-//   api.appendAnswer(appendAnswer)
-//     .then(ui.appendAnswerSuccess)
-//     .catch(ui.appendAnswerFailure);
-// };
+
 
 const onViewYourSurveys = function (event) {
   event.preventDefault();
@@ -49,10 +41,10 @@ const onViewAllSurveys = function (event) {
 const onChangeTitle = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  // console.log(event.target);
-  // let id = data.survey._id;
-  console.log('data.survey._id', data.survey._id);
-  // console.log('this is id and data', id, data);
+  // // console.log(event.target);
+   // let id = data.survey._id;
+  // // console.log('data.survey._id', data.survey._id);
+   // // console.log('this is id and data', id, data);
   api.changeTitle(data)
     .then(ui.changeTitleSuccess)
     .catch(ui.changeTitleFailure);

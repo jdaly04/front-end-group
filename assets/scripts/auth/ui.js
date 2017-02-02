@@ -4,7 +4,7 @@ const store = require('../store.js');
 
 const success = (data) => {
   $('#messages').text("Success");
-  console.log(data);
+  // console.log(data);
 };
 
 const failure = (error) => {
@@ -53,6 +53,7 @@ const signInSuccess = (data) => {
   $('#sign-in').trigger('reset');
   $('#shakeHere').hide();
   $('#createASurvey').show();
+  $('.explanation').hide();
 };
 
 const signInFailure = (data) => {

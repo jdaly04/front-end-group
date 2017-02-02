@@ -30,19 +30,19 @@ const viewYourSurveysSuccess = (data) => {
     return survey;
   });
 
-  console.log("answers are", array);
+  // // console.log("answers are", array);
   let newData = {surveys:data.survey};
   $('#displayAllCurrentUsersSurveys').show().html(showYourSurveysTemplate(newData));
   $('#myModal1').modal('hide');
   $('#myModal6').modal('show');
 };
 const viewYourSurveysFailure = (data) => {
-  console.log("data fail is", data);
+  // console.log("data fail is", data);
 };
 
 const questionAppendSuccess = (data) => {
    store.survey = data.survey;
-  console.log('this is data.survey._id', data.survey._id);
+  // console.log('this is data.survey._id', data.survey._id);
   $('#myModal1').modal('hide');
   $('#questionAppend').trigger('reset');
   $('#surveyBox').show().text('Survey Was Created! Check The List');
@@ -51,12 +51,12 @@ const questionAppendSuccess = (data) => {
 };
 
 const questionAppendFailure = (data) => {
-  console.log(data);
+  // console.log(data);
   $('#surveyBox').text('Survey Was NOT Created! Enter Valid Title Please.');
 };
 
 const deleteSurveySuccess = (data) => {
-  console.log(data);
+  // console.log(data);
   $('#signInBox')
       .empty()
       .append('Image Was Deleted');
@@ -70,42 +70,44 @@ const deleteSurveySuccess = (data) => {
 };
 
 const deleteSurveyFailure = (data) => {
-  console.log("data is ", data);
+  // console.log("data is ", data);
   $('#signInBox')
       .empty()
       .append('That May Not Belong To You (Or It May Not Exist)');
 };
 
 const appendAnswerSuccess = (data) => {
-  console.log(data);
-  $('#signInBox')
-      .empty()
-      .append('Answer Was Submitted');
+  // console.log(data);
+  // $('#answerSuccess').
+  //   empty()
+    //  .append('Answer Was Submitted');
   $('#appendAnswer').trigger('reset');
+  $('#answerSuccess').text('Answer added!');
+
 };
 
 const appendAnswerFailure = (data) => {
-  console.log(data);
+  // console.log(data);
   $('#signInBox')
       .empty()
       .append('Sorry! Something Went Wrong.');
 };
 
 const viewAllSurveysFailure = (data) => {
-  console.log(data);
-  $('#signInBox').empty();
+  // console.log(data);
+  $('#signInBox').text('Answer added!');
 };
 
 const changeTitleSuccess = (data) => {
-  console.log(data);
+  // console.log(data);
 };
 
 const changeTitleFailure = (data) => {
-  console.log(data);
+  // console.log(data);
 };
 
 const viewAllSurveysSuccess = (data) => {
-console.log(data);
+// console.log(data);
   $('.surveysContainer').show().html(showImagesTemplate(data));
   $('#signInBox').empty();
   $('#answerAppend').hide();

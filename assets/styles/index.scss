@@ -25,11 +25,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 body {
-  background: #F5FFFA;
+  // background: #FF533D;
+  background: #6BBAA7;
+}
+
+.modal-header {
+  background-color: #F7C331;
+}
+
+.modal-body {
+  background-color: #6B7A8F;
+}
+
+.explanation {
+  font-family:  "Gill Sans Extrabold", Helvetica, sans-serif;
+  font-size: 20px;
+  color: #0F1626;
 }
 
 #shakeHere {
-  color: red !important;
+  color: #F7C331 !important;
   display: flex;
   font-size: 125%;
   justify-content: center;
@@ -44,13 +59,8 @@ body {
   text-align: center;
 }
 
-.h1 {
-  font-family: Helvetica;
-  text-align: center;
-}
-
 .navbar {
-  background-color: #F5F5F5;
+  background-color: #6B7A8F;
 }
 
 .containera {
@@ -230,7 +240,7 @@ body {
 
 #sign-out-main {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   float: right;
@@ -240,7 +250,7 @@ body {
 
 #sign-out-pwrd {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   float: right;
@@ -252,7 +262,7 @@ body {
 
 #sign-out-modal-five {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   float: right;
@@ -262,7 +272,7 @@ body {
 
 #sign-out-modal-six {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   float: right;
@@ -325,17 +335,17 @@ body {
 #createASurvey {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   // margin-left: 0%;
-  // margin-right: 40%;
+  margin-right: 10%;
 }
 
 #createASurvey-modal-6 {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   float: left;
   justify-content: center;
   align-items: center;
@@ -345,7 +355,7 @@ body {
 #seeYourSurveysAndAnswers {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   // margin-left: 15%;
@@ -355,7 +365,7 @@ body {
 #viewYourSurveysAndAnswers {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   // margin-left: 15%;
@@ -365,7 +375,7 @@ body {
 #viewYourSurveys {
   width: 20%;
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   float: left;
   justify-content: center;
   align-items: center;
@@ -374,9 +384,9 @@ body {
 
 #surveyOptions {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   // display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   float: left;
   margin-top: 8px;
@@ -386,7 +396,7 @@ body {
 
 #createASurvey {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   // display: flex;
   justify-content: center;
   align-items: center;
@@ -412,11 +422,11 @@ body {
 
 #viewAllSurveys {
   text-color: white;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   // display: flex;
   justify-content: center;
   align-items: center;
-  float: right;
+  float: left;
   margin-right: 5%;
   margin-top: 8px;
   margin-bottom: 2px;
@@ -424,7 +434,7 @@ body {
 
 #close {
   text-color: gray;
-  text-shadow: 2px 2px white;
+  background: #F7C331;
   justify-content: center;
   align-items: center;
   float: right;
@@ -523,7 +533,9 @@ body {
 }
 
 .page-header {
-  display: flex;
+  display: block;
+  text-align:center;
+  border-bottom: 0;
 }
 
 @media (max-width: 700px) {

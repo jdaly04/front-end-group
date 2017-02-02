@@ -18,7 +18,6 @@ const config = require('../scripts/config.js');
 
 
   const deleteSurvey = function (id) {
-console.log(id);
     return $.ajax({
       url: config.apiOrigin + '/surveys/' + id,
       method: 'DELETE',
