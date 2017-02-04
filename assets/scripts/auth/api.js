@@ -5,7 +5,6 @@ const store = require('../store.js');
 const config = require('../config.js');
 
 
-
 const signUp = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
@@ -23,19 +22,6 @@ const signIn = (data) => {
     data,
   });
 };
-
-
-// const changePassword = (data) => {
-//   return $.ajax({
-//     url: app.host + '/change-password/' + app.user._id,
-//     method: "PATCH",
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data: data,
-//   });
-// };
-
 
 const changePassword = (data) => {
   return $.ajax({
