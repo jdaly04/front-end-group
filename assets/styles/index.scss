@@ -63,6 +63,9 @@ body {
 
 .navbar {
   background-color: $blueberry;
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(38,38,38,0.55);
+  -moz-box-shadow: 0px 10px 5px 0px rgba(38,38,38,0.55);
+  box-shadow: 0px 10px 5px 0px rgba(38,38,38,0.55);
 }
 
 .containera {
